@@ -4,8 +4,9 @@
   --panel: #111827;
   --panel-2: #0f172a;
   --border: rgba(148, 163, 184, 0.18);
-  --text: #e5e7eb;
-  --muted: #94a3b8;
+  --text: #f1f5f9;
+  --muted: #b6c2d3;
+  --text-soft: #cbd5e1;
   --accent: #60a5fa;
   --good: #34d399;
   --warn: #fbbf24;
@@ -39,6 +40,11 @@ a {
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+}
+
+button.card {
+  color: var(--text);
+  font: inherit;
 }
 
 .btn {

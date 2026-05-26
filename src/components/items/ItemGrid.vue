@@ -72,7 +72,7 @@ export default {
 }
 
 .muted {
-  color: var(--muted);
+  color: var(--text-soft);
   font-size: 12px;
 }
 
@@ -90,6 +90,13 @@ export default {
   align-items: center;
   cursor: pointer;
   text-align: left;
+  color: var(--text);
+  background: var(--panel);
+}
+
+.itemCard:hover {
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+  background: color-mix(in srgb, var(--panel) 88%, #1e293b);
 }
 
 .itemCard.active {
@@ -134,12 +141,14 @@ export default {
 
 .name {
   font-weight: 700;
+  color: var(--text);
+  line-height: 1.25;
 }
 
 .sub {
   margin-top: 2px;
   font-size: 12px;
-  color: var(--muted);
+  color: var(--text-soft);
   display: flex;
   gap: 6px;
   align-items: center;
