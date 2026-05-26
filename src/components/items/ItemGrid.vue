@@ -14,7 +14,7 @@
         type="button"
       >
         <div class="icon" :class="rarityClass(it.rarity)">
-          <img v-if="it.icon" :src="it.icon" alt="" />
+          <img v-if="it.icon" :src="it.icon" alt="" loading="lazy" decoding="async" />
           <div v-else class="icon__placeholder">{{ initials(it.name) }}</div>
         </div>
 

@@ -20,13 +20,13 @@
         </div>
 
         <div class="hero__image icon" :class="rarityClass(item.rarity)">
-          <img v-if="item.icon" :src="item.icon" alt="" />
+          <img v-if="item.icon" :src="item.icon" alt="" loading="lazy" decoding="async" />
           <div v-else class="icon__placeholder">{{ initials(item.name) }}</div>
         </div>
       </div>
 
       <div class="section">
-        <div class="section__title">Effects (mỗi dòng 1 effect)</div>
+        <div class="section__title">Effects</div>
         <div v-if="(item.effects ?? []).length === 0" class="empty">No effects.</div>
 
         <div v-else class="effects">
@@ -40,14 +40,6 @@
               <span v-for="f in e.fields" :key="f.key + f.value" class="fieldChip"> {{ f.key }}: {{ f.value }} </span>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section__title">Heroes sở hữu</div>
-        <div v-if="(item.heroOwners ?? []).length === 0" class="empty">Không có hero owner.</div>
-        <div v-else class="owners">
-          <span v-for="hero in item.heroOwners" :key="hero" class="ownerChip">{{ hero }}</span>
         </div>
       </div>
     </template>
@@ -252,19 +244,6 @@ export default {
   border-radius: 999px;
   border: 1px solid var(--border);
   color: var(--muted);
-}
-
-.owners {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.ownerChip {
-  padding: 6px 10px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: var(--panel-2);
 }
 
 .empty {
