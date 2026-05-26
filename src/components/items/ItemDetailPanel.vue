@@ -1,57 +1,53 @@
 <template>
   <div class="detail">
     <template v-if="item">
-      <div class="head">
-        <div class="icon" :class="rarityClass(item.rarity)">
+      <div class="hero card">
+        <div class="hero__main">
+          <div class="name">{{ item.name }}</div>
+          <div class="metaLine">ID {{ item.id }}</div>
+
+          <div class="primaryBadges">
+            <span class="pill">{{ item.stats?.isActive ? 'Active' : 'Passive' }}</span>
+            <span class="pill pill--muted">CD {{ item.stats?.cooldownSeconds ? item.stats.cooldownSeconds + 's' : '-' }}</span>
+            <span class="pill pill--muted">Price {{ item.stats?.shopPrice ?? '-' }}</span>
+          </div>
+
+          <div class="tags">
+            <span v-for="t in item.tags ?? []" :key="t" class="tag" :style="{ '--tag': tagColor(t) }">
+              {{ tagName(t) }}
+            </span>
+          </div>
+        </div>
+
+        <div class="hero__image icon" :class="rarityClass(item.rarity)">
           <img v-if="item.icon" :src="item.icon" alt="" />
           <div v-else class="icon__placeholder">{{ initials(item.name) }}</div>
         </div>
-
-        <div class="headMeta">
-          <div class="name">{{ item.name }}</div>
-          <div class="id">ID: {{ item.id }}</div>
-        </div>
       </div>
 
       <div class="section">
-        <div class="section__title">Tags</div>
-        <div class="tags">
-          <span v-for="t in item.tags ?? []" :key="t" class="tag" :style="{ '--tag': tagColor(t) }">
-            {{ tagName(t) }}
-          </span>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section__title">Stats</div>
-        <div class="stats">
-          <div class="stat">
-            <div class="stat__k">Type</div>
-            <div class="stat__v">{{ item.stats?.isActive ? 'Active' : 'Passive' }}</div>
-          </div>
-          <div class="stat">
-            <div class="stat__k">Shop price</div>
-            <div class="stat__v">{{ item.stats?.shopPrice ?? '—' }}</div>
-          </div>
-          <div class="stat">
-            <div class="stat__k">Cooldown</div>
-            <div class="stat__v">{{ item.stats?.cooldownSeconds ? item.stats.cooldownSeconds + 's' : '—' }}</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section__title">Effects</div>
+        <div class="section__title">Effects (mỗi dòng 1 effect)</div>
         <div v-if="(item.effects ?? []).length === 0" class="empty">No effects.</div>
 
         <div v-else class="effects">
           <div v-for="(e, idx) in item.effects" :key="idx" class="effect">
             <div class="effect__meta">
               <span class="pill">{{ e.trigger }}</span>
-              <span class="pill pill--muted">{{ e.target }}</span>
+              <span class="pill pill--muted">{{ e.type }}</span>
             </div>
             <div class="effect__text">{{ e.text }}</div>
+            <div v-if="(e.fields ?? []).length > 0" class="fieldList">
+              <span v-for="f in e.fields" :key="f.key + f.value" class="fieldChip"> {{ f.key }}: {{ f.value }} </span>
+            </div>
           </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section__title">Heroes sở hữu</div>
+        <div v-if="(item.heroOwners ?? []).length === 0" class="empty">Không có hero owner.</div>
+        <div v-else class="owners">
+          <span v-for="hero in item.heroOwners" :key="hero" class="ownerChip">{{ hero }}</span>
         </div>
       </div>
     </template>
@@ -97,17 +93,19 @@ export default {
   gap: 14px;
 }
 
-.head {
+.hero {
+  padding: 14px;
   display: grid;
-  grid-template-columns: 72px 1fr;
-  gap: 12px;
-  align-items: center;
+  grid-template-columns: 1fr 130px;
+  gap: 14px;
+  align-items: stretch;
 }
 
 .icon {
-  width: 72px;
-  height: 72px;
-  border-radius: 18px;
+  width: 100%;
+  height: 100%;
+  min-height: 130px;
+  border-radius: 14px;
   display: grid;
   place-items: center;
   border: 1px solid var(--border);
@@ -137,17 +135,25 @@ export default {
   font-weight: 900;
   letter-spacing: 0.8px;
   color: var(--muted);
+  font-size: 20px;
 }
 
 .name {
   font-weight: 800;
-  font-size: 20px;
+  font-size: 24px;
 }
 
-.id {
+.metaLine {
   color: var(--muted);
   font-size: 12px;
-  margin-top: 2px;
+  margin-top: 4px;
+}
+
+.primaryBadges {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .section__title {
@@ -156,6 +162,7 @@ export default {
 }
 
 .tags {
+  margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -232,13 +239,41 @@ export default {
   line-height: 1.35;
 }
 
+.fieldList {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.fieldChip {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.owners {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ownerChip {
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--panel-2);
+}
+
 .empty {
   color: var(--muted);
   font-size: 13px;
 }
 
 @media (max-width: 520px) {
-  .stats {
+  .hero {
     grid-template-columns: 1fr;
   }
 }

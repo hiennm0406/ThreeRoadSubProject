@@ -1,0 +1,16 @@
+{
+  "tags": [
+    { "id": "weapon", "name": "Weapon" },
+    { "id": "armor", "name": "Armor" },
+    { "id": "food", "name": "Food" },
+    { "id": "magic", "name": "Magic" },
+    { "id": "fire", "name": "Fire" },
+    { "id": "ice", "name": "Ice" },
+    { "id": "lightning", "name": "Lightning" },
+    { "id": "heal", "name": "Heal" }
+  ],
+  "items": [],
+  "generatedAtUtc": "",
+  "totalItemCount": 0
+}
+

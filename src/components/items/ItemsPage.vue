@@ -33,7 +33,7 @@
       </div>
 
       <div class="filters__hint">
-        Showing <b>{{ filteredItems.length }}</b> items.
+        Showing <b>{{ filteredItems.length }}</b> / {{ items.length }} items.
       </div>
     </aside>
 
@@ -50,7 +50,18 @@
 <script>
 import ItemGrid from './ItemGrid.vue'
 import ItemDetailPanel from './ItemDetailPanel.vue'
-import db from './../../data/items.json'
+import db from './../../data/items.generated.json'
+
+const TAG_COLORS = {
+  weapon: '#f59e0b',
+  armor: '#94a3b8',
+  food: '#34d399',
+  magic: '#a78bfa',
+  fire: '#fb7185',
+  ice: '#60a5fa',
+  lightning: '#fbbf24',
+  heal: '#22c55e',
+}
 
 function normalize(s) {
   return String(s ?? '').toLowerCase()
@@ -66,7 +77,10 @@ function buildTerms(query) {
 export default {
   components: { ItemGrid, ItemDetailPanel },
   data() {
-    const tags = db.tags ?? []
+    const tags = (db.tags ?? []).map((t) => ({
+      ...t,
+      color: t.color ?? TAG_COLORS[t.id] ?? '#64748b',
+    }))
     const items = db.items ?? []
     const tagById = Object.fromEntries(tags.map((t) => [t.id, t]))
 
@@ -97,7 +111,14 @@ export default {
         }
 
         if (terms.length > 0) {
-          const hay = normalize(it.name) + ' ' + normalize((it.effects ?? []).map((e) => e.text).join(' '))
+          const hay =
+            normalize(it.name) +
+            ' ' +
+            normalize((it.effects ?? []).map((e) => e.text).join(' ')) +
+            ' ' +
+            normalize((it.effects ?? []).flatMap((e) => (e.fields ?? []).map((f) => `${f.key} ${f.value}`)).join(' ')) +
+            ' ' +
+            normalize((it.heroOwners ?? []).join(' '))
           const ok = mode === 'all' ? terms.every((t) => hay.includes(t)) : terms.some((t) => hay.includes(t))
           if (!ok) return false
         }
