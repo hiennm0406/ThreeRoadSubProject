@@ -8,6 +8,7 @@
 
       <nav class="nav">
         <RouterLink class="nav__link" :to="{ name: 'items' }">Items</RouterLink>
+        <RouterLink class="nav__link" :to="{ name: 'itemdetail' }">Item Detail</RouterLink>
       </nav>
     </header>
 

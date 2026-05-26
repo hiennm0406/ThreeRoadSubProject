@@ -1,5 +1,5 @@
 <template>
-  <div class="itemsPage">
+  <div class="itemDetailPage">
     <ItemFilters
       :all-tags="allTags"
       :query="query"
@@ -13,24 +13,25 @@
       @clear="clearAll"
     />
 
-    <section class="grid">
-      <ItemGrid :items="filteredItems" :selected-id="selectedId" @select="onSelect" />
-    </section>
+    <section class="list">
+      <div v-if="filteredItems.length === 0" class="listEmpty card">
+        Không có item nào khớp bộ lọc.
+      </div>
 
-    <aside class="detail card">
-      <ItemDetailPanel :item="selectedItem" :tag-by-id="tagById" />
-    </aside>
+      <article v-for="it in filteredItems" :key="it.id" class="listRow card">
+        <ItemDetailPanel :item="it" :tag-by-id="tagById" />
+      </article>
+    </section>
   </div>
 </template>
 
 <script>
-import ItemGrid from './ItemGrid.vue'
-import ItemDetailPanel from './ItemDetailPanel.vue'
 import ItemFilters from './ItemFilters.vue'
+import ItemDetailPanel from './ItemDetailPanel.vue'
 import { filterItems, loadItemDatabase } from './../../data/itemDb'
 
 export default {
-  components: { ItemGrid, ItemDetailPanel, ItemFilters },
+  components: { ItemFilters, ItemDetailPanel },
   data() {
     const { tags, tagById, items } = loadItemDatabase()
     return {
@@ -40,7 +41,6 @@ export default {
       query: '',
       matchMode: 'any',
       selectedTags: new Set(),
-      selectedId: items[0]?.id ?? null,
     }
   },
   computed: {
@@ -50,20 +50,6 @@ export default {
         selectedTags: this.selectedTags,
         matchMode: this.matchMode,
       })
-    },
-    selectedItem() {
-      return this.items.find((x) => x.id === this.selectedId) ?? null
-    },
-  },
-  watch: {
-    filteredItems(list) {
-      if (list.length === 0) {
-        this.selectedId = null
-        return
-      }
-      if (!list.some((x) => x.id === this.selectedId)) {
-        this.selectedId = list[0].id
-      }
     },
   },
   methods: {
@@ -79,27 +65,37 @@ export default {
       this.query = ''
       this.selectedTags = new Set()
     },
-    onSelect(id) {
-      this.selectedId = id
-    },
   },
 }
 </script>
 
 <style scoped>
-.itemsPage {
+.itemDetailPage {
   display: grid;
-  grid-template-columns: 320px 1fr 420px;
+  grid-template-columns: 320px 1fr;
   gap: 16px;
   align-items: start;
 }
 
-.detail {
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.listRow {
   padding: 14px;
 }
 
-@media (max-width: 1200px) {
-  .itemsPage {
+.listEmpty {
+  padding: 24px;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .itemDetailPage {
     grid-template-columns: 1fr;
   }
 }
