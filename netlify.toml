@@ -1,6 +1,9 @@
 # example netlify.toml
+[build.environment]
+  NODE_VERSION = "22"
+
 [build]
-  command = "vite build"
+  command = "npm ci && vite build"
   functions = "netlify/functions"
   publish = "dist"
 

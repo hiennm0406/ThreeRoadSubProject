@@ -1,87 +1,78 @@
-
 <template>
-  <sidebar-menu @update:collapsed="onToggleCollapse" :menu="menu" :showOneChild="true" />
-  <div id="Mainboard" :class="{ collapsed: isCollapsed }">
-    <router-view />
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand__title">Item Database</div>
+        <div class="brand__sub">AutoBattleFantasy</div>
+      </div>
+
+      <nav class="nav">
+        <RouterLink class="nav__link" :to="{ name: 'items' }">Items</RouterLink>
+      </nav>
+    </header>
+
+    <main class="content">
+      <RouterView />
+    </main>
   </div>
 </template>
 
-<script >
-
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-export default {
-  data: function() {
-    return {
-      isCollapsed: false,
-      users: [],
-      //https://yaminncco.github.io/vue-sidebar-menu/#/basic-usage
-      menu: [
-          {
-            header: 'RAGNAROK',
-            hiddenOnCollapse: true,
-          },
-          {
-            to: '/',
-            title: 'Main Page',
-            icon: {
-              element: 'span',
-              class: 'icon40 icon_main',
-            }
-          },
-          {
-            href: { name: 'History' },
-            title: 'Lịch sử thế giới',
-            icon: {
-              element: 'span',
-              class: 'icon40 icon_history',
-            }            
-          },
-          {
-            href: { name: 'Setting' },
-            title: 'Tổng quan - Setting',
-             icon: {
-              element: 'span',
-              class: 'icon40 icon_setting',
-            }            
-          },
-          {
-             href: { name: 'Character' },
-            title: 'Nhân vật',
-            icon: 'fa fa-chart-area',
-            icon: {
-              element: 'span',
-              class: 'icon40 icon_character',
-            }
-          }
-        ]
-    };
-  },
-  methods: {
-    increment() {
-      this.$store.commit('increment')
-      console.log(this.$store.state.count)
-    },
-    onToggleCollapse(collapsed) {
-      this.isCollapsed = collapsed;
-    },
-  }
-}
+<script>
+export default {}
 </script>
-<style src="@vueform/slider/themes/default.css"></style>
+
 <style>
 @import "./css/global.css";
-@import 'vue-slider-component/theme/antd.css';
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+
+.app {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
 }
-#Mainboard{
-  padding-left: 290px;
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--panel) 86%, black);
+  backdrop-filter: blur(6px);
 }
-#Mainboard.collapsed{
-  padding-left: 65px !important;
+
+.brand__title {
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.brand__sub {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+}
+
+.nav__link {
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.nav__link.router-link-active {
+  border-color: var(--border);
+  background: var(--panel);
+}
+
+.content {
+  padding: 16px;
 }
 </style>
