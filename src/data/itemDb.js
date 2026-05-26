@@ -22,6 +22,17 @@ export function buildTerms(query) {
     .filter(Boolean)
 }
 
+export function collectHeroes(items) {
+  const names = new Set()
+  for (const it of items) {
+    for (const hero of it.heroOwners ?? []) {
+      const name = String(hero ?? '').trim()
+      if (name) names.add(name)
+    }
+  }
+  return Array.from(names).sort((a, b) => a.localeCompare(b))
+}
+
 export function loadItemDatabase() {
   const tags = (db.tags ?? []).map((t) => ({
     ...t,
@@ -29,12 +40,17 @@ export function loadItemDatabase() {
   }))
   const items = db.items ?? []
   const tagById = Object.fromEntries(tags.map((t) => [t.id, t]))
-  return { tags, tagById, items }
+  const heroes = collectHeroes(items)
+  return { tags, tagById, items, heroes }
 }
 
-export function filterItems(items, { query = '', selectedTags = [], matchMode = 'any' }) {
+export function filterItems(
+  items,
+  { query = '', selectedTags = [], selectedHeroes = [], matchMode = 'any' },
+) {
   const terms = buildTerms(query)
   const needTags = Array.isArray(selectedTags) ? selectedTags : Array.from(selectedTags)
+  const needHeroes = Array.isArray(selectedHeroes) ? selectedHeroes : Array.from(selectedHeroes)
   const mode = matchMode
 
   return items.filter((it) => {
@@ -42,6 +58,15 @@ export function filterItems(items, { query = '', selectedTags = [], matchMode = 
       const tags = it.tags ?? []
       const ok =
         mode === 'all' ? needTags.every((t) => tags.includes(t)) : needTags.some((t) => tags.includes(t))
+      if (!ok) return false
+    }
+
+    if (needHeroes.length > 0) {
+      const owners = it.heroOwners ?? []
+      const ok =
+        mode === 'all'
+          ? needHeroes.every((h) => owners.includes(h))
+          : needHeroes.some((h) => owners.includes(h))
       if (!ok) return false
     }
 

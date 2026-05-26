@@ -33,6 +33,20 @@
       </button>
     </div>
 
+    <div v-if="allHeroes.length > 0" class="filters__label">Heroes</div>
+    <div v-if="allHeroes.length > 0" class="heroGrid">
+      <button
+        v-for="hero in allHeroes"
+        :key="hero"
+        type="button"
+        class="heroPick"
+        :class="{ active: selectedHeroIds.has(hero) }"
+        @click="$emit('toggle-hero', hero)"
+      >
+        {{ hero }}
+      </button>
+    </div>
+
     <div class="filters__hint">
       Showing <b>{{ filteredCount }}</b> / {{ totalCount }} items.
     </div>
@@ -43,13 +57,15 @@
 export default {
   props: {
     allTags: { type: Array, required: true },
+    allHeroes: { type: Array, default: () => [] },
     query: { type: String, default: '' },
     matchMode: { type: String, default: 'any' },
     selectedTagIds: { type: Object, required: true },
+    selectedHeroIds: { type: Object, default: () => new Set() },
     filteredCount: { type: Number, required: true },
     totalCount: { type: Number, required: true },
   },
-  emits: ['update:query', 'toggle-match-mode', 'toggle-tag', 'clear'],
+  emits: ['update:query', 'toggle-match-mode', 'toggle-tag', 'toggle-hero', 'clear'],
   computed: {
     matchModeLabel() {
       return this.matchMode === 'all' ? 'Match All' : 'Match Any'
@@ -106,5 +122,26 @@ export default {
 .tagPick.active {
   border-color: color-mix(in srgb, var(--tag) 75%, var(--border));
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--tag) 22%, transparent);
+}
+
+.heroGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.heroPick {
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--panel-2);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.heroPick.active {
+  border-color: color-mix(in srgb, var(--accent) 75%, var(--border));
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 22%, transparent);
 }
 </style>

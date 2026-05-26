@@ -2,14 +2,17 @@
   <div class="itemDetailPage">
     <ItemFilters
       :all-tags="allTags"
+      :all-heroes="allHeroes"
       :query="query"
       :match-mode="matchMode"
       :selected-tag-ids="selectedTags"
+      :selected-hero-ids="selectedHeroes"
       :filtered-count="filteredItems.length"
       :total-count="items.length"
       @update:query="query = $event"
       @toggle-match-mode="toggleMatchMode"
       @toggle-tag="toggleTag"
+      @toggle-hero="toggleHero"
       @clear="clearAll"
     />
 
@@ -50,14 +53,16 @@ const LOAD_BATCH = 12
 export default {
   components: { ItemFilters, ItemDetailPanel },
   data() {
-    const { tags, tagById, items } = loadItemDatabase()
+    const { tags, tagById, items, heroes } = loadItemDatabase()
     return {
       allTags: tags,
+      allHeroes: heroes,
       tagById,
       items,
       query: '',
       matchMode: 'any',
       selectedTags: new Set(),
+      selectedHeroes: new Set(),
       visibleCount: INITIAL_VISIBLE,
       loadObserver: null,
     }
@@ -67,6 +72,7 @@ export default {
       return filterItems(this.items, {
         query: this.query,
         selectedTags: this.selectedTags,
+        selectedHeroes: this.selectedHeroes,
         matchMode: this.matchMode,
       })
     },
@@ -111,9 +117,15 @@ export default {
       else this.selectedTags.add(id)
       this.selectedTags = new Set(this.selectedTags)
     },
+    toggleHero(name) {
+      if (this.selectedHeroes.has(name)) this.selectedHeroes.delete(name)
+      else this.selectedHeroes.add(name)
+      this.selectedHeroes = new Set(this.selectedHeroes)
+    },
     clearAll() {
       this.query = ''
       this.selectedTags = new Set()
+      this.selectedHeroes = new Set()
     },
     resetVisibleBatch() {
       this.visibleCount = INITIAL_VISIBLE

@@ -2,14 +2,17 @@
   <div class="itemsPage">
     <ItemFilters
       :all-tags="allTags"
+      :all-heroes="allHeroes"
       :query="query"
       :match-mode="matchMode"
       :selected-tag-ids="selectedTags"
+      :selected-hero-ids="selectedHeroes"
       :filtered-count="filteredItems.length"
       :total-count="items.length"
       @update:query="query = $event"
       @toggle-match-mode="toggleMatchMode"
       @toggle-tag="toggleTag"
+      @toggle-hero="toggleHero"
       @clear="clearAll"
     />
 
@@ -32,14 +35,16 @@ import { filterItems, loadItemDatabase } from './../../data/itemDb'
 export default {
   components: { ItemGrid, ItemDetailPanel, ItemFilters },
   data() {
-    const { tags, tagById, items } = loadItemDatabase()
+    const { tags, tagById, items, heroes } = loadItemDatabase()
     return {
       allTags: tags,
+      allHeroes: heroes,
       tagById,
       items,
       query: '',
       matchMode: 'any',
       selectedTags: new Set(),
+      selectedHeroes: new Set(),
       selectedId: items[0]?.id ?? null,
     }
   },
@@ -48,6 +53,7 @@ export default {
       return filterItems(this.items, {
         query: this.query,
         selectedTags: this.selectedTags,
+        selectedHeroes: this.selectedHeroes,
         matchMode: this.matchMode,
       })
     },
@@ -75,9 +81,15 @@ export default {
       else this.selectedTags.add(id)
       this.selectedTags = new Set(this.selectedTags)
     },
+    toggleHero(name) {
+      if (this.selectedHeroes.has(name)) this.selectedHeroes.delete(name)
+      else this.selectedHeroes.add(name)
+      this.selectedHeroes = new Set(this.selectedHeroes)
+    },
     clearAll() {
       this.query = ''
       this.selectedTags = new Set()
+      this.selectedHeroes = new Set()
     },
     onSelect(id) {
       this.selectedId = id
