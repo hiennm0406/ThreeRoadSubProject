@@ -42,6 +42,12 @@
           </div>
         </div>
       </div>
+
+      <div v-if="(item.heroOwners ?? []).length > 0" class="section">
+        <div class="owners">
+          <span v-for="hero in item.heroOwners" :key="hero" class="ownerChip">{{ hero }}</span>
+        </div>
+      </div>
     </template>
 
     <div v-else class="empty">Select an item.</div>
@@ -244,6 +250,19 @@ export default {
   border-radius: 999px;
   border: 1px solid var(--border);
   color: var(--muted);
+}
+
+.owners {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ownerChip {
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--panel-2);
 }
 
 .empty {
