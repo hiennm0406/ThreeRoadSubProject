@@ -56,7 +56,7 @@
                 {
                     "type": "ItemEffect_DealDmg",
                     "trigger": "CooldownReady",
-                    "text": "ItemEffect_DealDmg (CooldownReady) - targetType: FrontEnemy, triggerType: CooldownReady",
+                    "text": "Gây 10/20/30/40 sát thương → địch hàng trước (CooldownReady)",
                     "fields": [
                         {
                             "key": "targetType",
@@ -71,15 +71,15 @@
                 {
                     "type": "ItemEffect_StaticToDmg",
                     "trigger": "None",
-                    "text": "ItemEffect_StaticToDmg (None) - damagePerUnit: SlashFourFloats, staticPerUnit: SlashFourFloats, triggerType: None",
+                    "text": "Với mỗi 5/5/5/5 static trên người nhân vật thì tăng 2/4/6/8 sát thương cho vũ khí này (None)",
                     "fields": [
                         {
                             "key": "damagePerUnit",
-                            "value": "SlashFourFloats"
+                            "value": "2/4/6/8"
                         },
                         {
                             "key": "staticPerUnit",
-                            "value": "SlashFourFloats"
+                            "value": "5/5/5/5"
                         },
                         {
                             "key": "triggerType",
@@ -2027,6 +2027,6 @@
             "effects": []
         }
     ],
-    "generatedAtUtc": "2026-06-01T14:29:36.6485436Z",
+    "generatedAtUtc": "2026-06-01T14:45:48.0771070Z",
     "totalItemCount": 100
 }
