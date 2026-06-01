@@ -36,39 +36,54 @@
     "items": [
         {
             "id": 1,
-            "name": "Flameblade",
-            "icon": "/items/1_flameblade.png",
-            "heroOwnId": 1,
+            "name": "Kiếm sắt",
+            "icon": "/items/1_kiếm_sắt.png",
+            "heroOwnIds": [
+                1
+            ],
             "heroOwners": [
-                "The Warrior"
+                "R0N1N"
             ],
             "tags": [
-                "weapon",
-                "magic",
-                "fire"
+                "weapon"
             ],
             "stats": {
                 "shopPrice": 10,
                 "isActive": true,
-                "cooldownSeconds": 5.0
+                "cooldownSeconds": 6.0
             },
             "effects": [
                 {
                     "type": "ItemEffect_DealDmg",
                     "trigger": "CooldownReady",
-                    "text": "ItemEffect_DealDmg (CooldownReady) - damage: 10, targetType: Enemy, triggerType: CooldownReady",
+                    "text": "ItemEffect_DealDmg (CooldownReady) - targetType: FrontEnemy, triggerType: CooldownReady",
                     "fields": [
                         {
-                            "key": "damage",
-                            "value": "10"
-                        },
-                        {
                             "key": "targetType",
-                            "value": "Enemy"
+                            "value": "FrontEnemy"
                         },
                         {
                             "key": "triggerType",
                             "value": "CooldownReady"
+                        }
+                    ]
+                },
+                {
+                    "type": "ItemEffect_StaticToDmg",
+                    "trigger": "None",
+                    "text": "ItemEffect_StaticToDmg (None) - damagePerUnit: SlashFourFloats, staticPerUnit: SlashFourFloats, triggerType: None",
+                    "fields": [
+                        {
+                            "key": "damagePerUnit",
+                            "value": "SlashFourFloats"
+                        },
+                        {
+                            "key": "staticPerUnit",
+                            "value": "SlashFourFloats"
+                        },
+                        {
+                            "key": "triggerType",
+                            "value": "None"
                         }
                     ]
                 }
@@ -76,186 +91,196 @@
         },
         {
             "id": 2,
-            "name": "Frostguard Mail",
-            "icon": "/items/2_frostguard_mail.png",
-            "heroOwnId": 1,
+            "name": "Khiên sắt",
+            "icon": "/items/2_khiên_sắt.png",
+            "heroOwnIds": [
+                1
+            ],
             "heroOwners": [
-                "The Warrior"
-            ],
-            "tags": [
-                "armor",
-                "ice"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 3,
-            "name": "Energy Loaf",
-            "icon": "/items/3_energy_loaf.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
-            "tags": [
-                "food",
-                "heal"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 8.0
-            },
-            "effects": []
-        },
-        {
-            "id": 4,
-            "name": "Stormcaller Rod",
-            "icon": "/items/4_stormcaller_rod.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
-            "tags": [
-                "weapon",
-                "magic",
-                "lightning"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 4.5
-            },
-            "effects": []
-        },
-        {
-            "id": 5,
-            "name": "Arcane Bulwark",
-            "icon": "/items/5_arcane_bulwark.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
-            "tags": [
-                "armor",
-                "magic"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 6,
-            "name": "Rejuvenation Elixir",
-            "icon": "/items/6_rejuvenation_elixir.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
-            "tags": [
-                "food",
-                "magic",
-                "heal"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 12.0
-            },
-            "effects": []
-        },
-        {
-            "id": 7,
-            "name": "Glacial Scepter",
-            "icon": "/items/7_glacial_scepter.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
-            "tags": [
-                "magic",
-                "ice"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 6.0
-            },
-            "effects": []
-        },
-        {
-            "id": 8,
-            "name": "Stormfang Dagger",
-            "icon": "/items/8_stormfang_dagger.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
-            "tags": [
-                "weapon",
-                "lightning"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 3.5
-            },
-            "effects": []
-        },
-        {
-            "id": 9,
-            "name": "Heavy Plating",
-            "icon": "/items/9_heavy_plating.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
+                "R0N1N"
             ],
             "tags": [
                 "armor"
             ],
             "stats": {
                 "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
+                "isActive": true,
+                "cooldownSeconds": 5.0
+            },
+            "effects": []
+        },
+        {
+            "id": 3,
+            "name": "Gậy gỗ",
+            "icon": "/items/3_gậy_gỗ.png",
+            "heroOwnIds": [
+                1
+            ],
+            "heroOwners": [
+                "R0N1N"
+            ],
+            "tags": [
+                "weapon"
+            ],
+            "stats": {
+                "shopPrice": 10,
+                "isActive": true,
+                "cooldownSeconds": 5.0
+            },
+            "effects": []
+        },
+        {
+            "id": 4,
+            "name": "Giáo",
+            "icon": "/items/4_giáo.png",
+            "heroOwnIds": [
+                1
+            ],
+            "heroOwners": [
+                "R0N1N"
+            ],
+            "tags": [
+                "weapon"
+            ],
+            "stats": {
+                "shopPrice": 10,
+                "isActive": true,
+                "cooldownSeconds": 5.0
+            },
+            "effects": []
+        },
+        {
+            "id": 5,
+            "name": "Dao quân dụng",
+            "icon": "/items/5_dao_quân_dụng.png",
+            "heroOwnIds": [
+                1
+            ],
+            "heroOwners": [
+                "R0N1N"
+            ],
+            "tags": [
+                "weapon"
+            ],
+            "stats": {
+                "shopPrice": 10,
+                "isActive": true,
+                "cooldownSeconds": 5.0
+            },
+            "effects": []
+        },
+        {
+            "id": 6,
+            "name": "Côn sắt",
+            "icon": "/items/6_côn_sắt.png",
+            "heroOwnIds": [
+                1
+            ],
+            "heroOwners": [
+                "R0N1N"
+            ],
+            "tags": [
+                "weapon"
+            ],
+            "stats": {
+                "shopPrice": 10,
+                "isActive": true,
+                "cooldownSeconds": 5.0
+            },
+            "effects": []
+        },
+        {
+            "id": 7,
+            "name": "Heavy Hammer",
+            "icon": "/items/7_heavy_hammer.png",
+            "heroOwnIds": [
+                1
+            ],
+            "heroOwners": [
+                "R0N1N"
+            ],
+            "tags": [
+                "weapon"
+            ],
+            "stats": {
+                "shopPrice": 10,
+                "isActive": true,
+                "cooldownSeconds": 6.5
+            },
+            "effects": []
+        },
+        {
+            "id": 8,
+            "name": "Twin Daggers",
+            "icon": "/items/8_twin_daggers.png",
+            "heroOwnIds": [
+                1
+            ],
+            "heroOwners": [
+                "R0N1N"
+            ],
+            "tags": [
+                "weapon"
+            ],
+            "stats": {
+                "shopPrice": 10,
+                "isActive": true,
+                "cooldownSeconds": 5.0
+            },
+            "effects": []
+        },
+        {
+            "id": 9,
+            "name": "Knuckles",
+            "icon": "/items/9_knuckles.png",
+            "heroOwnIds": [
+                1
+            ],
+            "heroOwners": [
+                "R0N1N"
+            ],
+            "tags": [
+                "weapon"
+            ],
+            "stats": {
+                "shopPrice": 10,
+                "isActive": true,
+                "cooldownSeconds": 5.0
             },
             "effects": []
         },
         {
             "id": 10,
-            "name": "Revival Sigil",
-            "icon": "/items/10_revival_sigil.png",
-            "heroOwnId": 1,
+            "name": "Huy hiệu kẻ vô địch",
+            "icon": "/items/10_huy_hiệu_kẻ_vô_địch.png",
+            "heroOwnIds": [
+                1
+            ],
             "heroOwners": [
-                "The Warrior"
+                "R0N1N"
             ],
             "tags": [
-                "magic",
-                "heal"
+                "magic"
             ],
             "stats": {
                 "shopPrice": 10,
                 "isActive": true,
-                "cooldownSeconds": 14.0
+                "cooldownSeconds": 5.0
             },
             "effects": []
         },
         {
             "id": 101,
-            "name": "Bronze Sword",
-            "icon": "/items/101_bronze_sword.png",
-            "heroOwnId": 1,
+            "name": "Bao tay chiến binh",
+            "icon": "/items/101_bao_tay_chiến_binh.png",
+            "heroOwnIds": [
+                1
+            ],
             "heroOwners": [
-                "The Warrior"
+                "R0N1N"
             ],
             "tags": [
-                "weapon"
+                "armor"
             ],
             "stats": {
                 "shopPrice": 10,
@@ -266,14 +291,16 @@
         },
         {
             "id": 102,
-            "name": "Steel Longsword",
-            "icon": "/items/102_steel_longsword.png",
-            "heroOwnId": 1,
+            "name": "Warrior Eye Glass",
+            "icon": "/items/102_warrior_eye_glass.png",
+            "heroOwnIds": [
+                1
+            ],
             "heroOwners": [
-                "The Warrior"
+                "R0N1N"
             ],
             "tags": [
-                "weapon"
+                "armor"
             ],
             "stats": {
                 "shopPrice": 10,
@@ -284,14 +311,17 @@
         },
         {
             "id": 103,
-            "name": "Golden Longsword",
-            "icon": "/items/103_golden_longsword.png",
-            "heroOwnId": 1,
+            "name": "Tay cơ khí",
+            "icon": "/items/103_tay_cơ_khí.png",
+            "heroOwnIds": [
+                1
+            ],
             "heroOwners": [
-                "The Warrior"
+                "R0N1N"
             ],
             "tags": [
-                "weapon"
+                "armor",
+                "magic"
             ],
             "stats": {
                 "shopPrice": 10,
@@ -302,14 +332,17 @@
         },
         {
             "id": 104,
-            "name": "Golden Claymore",
-            "icon": "/items/104_golden_claymore.png",
-            "heroOwnId": 1,
+            "name": "Lõi điện",
+            "icon": "/items/104_lõi_điện.png",
+            "heroOwnIds": [
+                1
+            ],
             "heroOwners": [
-                "The Warrior"
+                "R0N1N"
             ],
             "tags": [
-                "weapon"
+                "magic",
+                "lightning"
             ],
             "stats": {
                 "shopPrice": 10,
@@ -320,14 +353,18 @@
         },
         {
             "id": 105,
-            "name": "Broad Cleaver",
-            "icon": "/items/105_broad_cleaver.png",
-            "heroOwnId": 1,
+            "name": "Laser Sword",
+            "icon": "/items/105_laser_sword.png",
+            "heroOwnIds": [
+                1
+            ],
             "heroOwners": [
-                "The Warrior"
+                "R0N1N"
             ],
             "tags": [
-                "weapon"
+                "weapon",
+                "magic",
+                "fire"
             ],
             "stats": {
                 "shopPrice": 10,
@@ -338,15 +375,17 @@
         },
         {
             "id": 106,
-            "name": "Warrior Flameblade",
-            "icon": "/items/106_warrior_flameblade.png",
-            "heroOwnId": 1,
+            "name": "Vòm trường lực",
+            "icon": "/items/106_vòm_trường_lực.png",
+            "heroOwnIds": [
+                1
+            ],
             "heroOwners": [
-                "The Warrior"
+                "R0N1N"
             ],
             "tags": [
-                "weapon",
-                "fire"
+                "armor",
+                "magic"
             ],
             "stats": {
                 "shopPrice": 10,
@@ -357,33 +396,37 @@
         },
         {
             "id": 107,
-            "name": "Inferno Blade",
-            "icon": "/items/107_inferno_blade.png",
-            "heroOwnId": 1,
+            "name": "Pin điện",
+            "icon": "/items/107_pin_điện.png",
+            "heroOwnIds": [
+                1
+            ],
             "heroOwners": [
-                "The Warrior"
+                "R0N1N"
             ],
             "tags": [
-                "weapon",
-                "fire"
+                "magic",
+                "lightning"
             ],
             "stats": {
                 "shopPrice": 10,
                 "isActive": true,
-                "cooldownSeconds": 6.0
+                "cooldownSeconds": 5.0
             },
             "effects": []
         },
         {
             "id": 108,
-            "name": "Royal Sword",
-            "icon": "/items/108_royal_sword.png",
-            "heroOwnId": 1,
+            "name": "Quạt tản nhiệt",
+            "icon": "/items/108_quạt_tản_nhiệt.png",
+            "heroOwnIds": [
+                1
+            ],
             "heroOwners": [
-                "The Warrior"
+                "R0N1N"
             ],
             "tags": [
-                "weapon"
+                "magic"
             ],
             "stats": {
                 "shopPrice": 10,
@@ -394,14 +437,17 @@
         },
         {
             "id": 109,
-            "name": "Training Sword",
-            "icon": "/items/109_training_sword.png",
-            "heroOwnId": 1,
+            "name": "Repair Drone",
+            "icon": "/items/109_repair_drone.png",
+            "heroOwnIds": [
+                1
+            ],
             "heroOwners": [
-                "The Warrior"
+                "R0N1N"
             ],
             "tags": [
-                "weapon"
+                "magic",
+                "heal"
             ],
             "stats": {
                 "shopPrice": 10,
@@ -412,14 +458,17 @@
         },
         {
             "id": 110,
-            "name": "Bronze Longsword",
-            "icon": "/items/110_bronze_longsword.png",
-            "heroOwnId": 1,
+            "name": "Killer Drone",
+            "icon": "/items/110_killer_drone.png",
+            "heroOwnIds": [
+                1
+            ],
             "heroOwners": [
-                "The Warrior"
+                "R0N1N"
             ],
             "tags": [
-                "weapon"
+                "weapon",
+                "magic"
             ],
             "stats": {
                 "shopPrice": 10,
@@ -432,10 +481,8 @@
             "id": 111,
             "name": "War Sword",
             "icon": "/items/111_war_sword.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
+            "heroOwnIds": [],
+            "heroOwners": [],
             "tags": [
                 "weapon"
             ],
@@ -450,10 +497,8 @@
             "id": 112,
             "name": "Falmer War Axe",
             "icon": "/items/112_falmer_war_axe.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
+            "heroOwnIds": [],
+            "heroOwners": [],
             "tags": [
                 "weapon"
             ],
@@ -468,10 +513,8 @@
             "id": 113,
             "name": "Bloody Ritual Axe",
             "icon": "/items/113_bloody_ritual_axe.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
+            "heroOwnIds": [],
+            "heroOwners": [],
             "tags": [
                 "weapon",
                 "fire"
@@ -487,10 +530,8 @@
             "id": 114,
             "name": "War Hammer",
             "icon": "/items/114_war_hammer.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
+            "heroOwnIds": [],
+            "heroOwners": [],
             "tags": [
                 "weapon"
             ],
@@ -505,10 +546,8 @@
             "id": 115,
             "name": "Hooked Fire Blade",
             "icon": "/items/115_hooked_fire_blade.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
+            "heroOwnIds": [],
+            "heroOwners": [],
             "tags": [
                 "weapon",
                 "fire"
@@ -524,10 +563,8 @@
             "id": 116,
             "name": "Falmer Cuirass",
             "icon": "/items/116_falmer_cuirass.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
+            "heroOwnIds": [],
+            "heroOwners": [],
             "tags": [
                 "armor"
             ],
@@ -542,10 +579,8 @@
             "id": 117,
             "name": "Iron Body Armor",
             "icon": "/items/117_iron_body_armor.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
+            "heroOwnIds": [],
+            "heroOwners": [],
             "tags": [
                 "armor"
             ],
@@ -560,10 +595,8 @@
             "id": 118,
             "name": "Reinforced Mail",
             "icon": "/items/118_reinforced_mail.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
+            "heroOwnIds": [],
+            "heroOwners": [],
             "tags": [
                 "armor"
             ],
@@ -578,10 +611,8 @@
             "id": 119,
             "name": "Horned Greathelm",
             "icon": "/items/119_horned_greathelm.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
+            "heroOwnIds": [],
+            "heroOwners": [],
             "tags": [
                 "armor"
             ],
@@ -596,10 +627,8 @@
             "id": 120,
             "name": "Leather March Boots",
             "icon": "/items/120_leather_march_boots.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
+            "heroOwnIds": [],
+            "heroOwners": [],
             "tags": [
                 "armor"
             ],
@@ -614,10 +643,8 @@
             "id": 121,
             "name": "Iron Pauldrons",
             "icon": "/items/121_iron_pauldrons.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
+            "heroOwnIds": [],
+            "heroOwners": [],
             "tags": [
                 "armor"
             ],
@@ -632,10 +659,8 @@
             "id": 122,
             "name": "Warrior Belt",
             "icon": "/items/122_warrior_belt.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
+            "heroOwnIds": [],
+            "heroOwners": [],
             "tags": [
                 "armor"
             ],
@@ -650,10 +675,8 @@
             "id": 123,
             "name": "Steel Bracers",
             "icon": "/items/123_steel_bracers.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
+            "heroOwnIds": [],
+            "heroOwners": [],
             "tags": [
                 "armor"
             ],
@@ -668,10 +691,8 @@
             "id": 124,
             "name": "Round Shield",
             "icon": "/items/124_round_shield.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
+            "heroOwnIds": [],
+            "heroOwners": [],
             "tags": [
                 "armor"
             ],
@@ -686,10 +707,8 @@
             "id": 125,
             "name": "Kite Shield",
             "icon": "/items/125_kite_shield.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
+            "heroOwnIds": [],
+            "heroOwners": [],
             "tags": [
                 "armor"
             ],
@@ -704,10 +723,8 @@
             "id": 126,
             "name": "Whetstone",
             "icon": "/items/126_whetstone.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
+            "heroOwnIds": [],
+            "heroOwners": [],
             "tags": [
                 "weapon"
             ],
@@ -722,10 +739,8 @@
             "id": 127,
             "name": "Camp Cheese",
             "icon": "/items/127_camp_cheese.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
+            "heroOwnIds": [],
+            "heroOwners": [],
             "tags": [
                 "food",
                 "heal"
@@ -741,10 +756,8 @@
             "id": 128,
             "name": "Basil Herbs",
             "icon": "/items/128_basil_herbs.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
+            "heroOwnIds": [],
+            "heroOwners": [],
             "tags": [
                 "food",
                 "heal"
@@ -760,10 +773,8 @@
             "id": 129,
             "name": "Kindling Bundle",
             "icon": "/items/129_kindling_bundle.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
+            "heroOwnIds": [],
+            "heroOwners": [],
             "tags": [
                 "food",
                 "fire"
@@ -779,10 +790,8 @@
             "id": 130,
             "name": "Dwarven Tunic",
             "icon": "/items/130_dwarven_tunic.png",
-            "heroOwnId": 1,
-            "heroOwners": [
-                "The Warrior"
-            ],
+            "heroOwnIds": [],
+            "heroOwners": [],
             "tags": [
                 "armor"
             ],
@@ -797,7 +806,9 @@
             "id": 201,
             "name": "Silver Blade",
             "icon": "/items/201_silver_blade.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -815,7 +826,9 @@
             "id": 202,
             "name": "Silver Rapier",
             "icon": "/items/202_silver_rapier.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -833,7 +846,9 @@
             "id": 203,
             "name": "Golden Rapier",
             "icon": "/items/203_golden_rapier.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -851,7 +866,9 @@
             "id": 204,
             "name": "Golden Shortsword",
             "icon": "/items/204_golden_shortsword.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -869,7 +886,9 @@
             "id": 205,
             "name": "Pale Longsword",
             "icon": "/items/205_pale_longsword.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -887,7 +906,9 @@
             "id": 206,
             "name": "Teal Grip Sword",
             "icon": "/items/206_teal_grip_sword.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -905,7 +926,9 @@
             "id": 207,
             "name": "Ruby Guard Sword",
             "icon": "/items/207_ruby_guard_sword.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -923,7 +946,9 @@
             "id": 208,
             "name": "Holy Blade",
             "icon": "/items/208_holy_blade.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -942,7 +967,9 @@
             "id": 209,
             "name": "Arcane Bulwark",
             "icon": "/items/209_arcane_bulwark.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -961,7 +988,9 @@
             "id": 210,
             "name": "Frostguard Mail",
             "icon": "/items/210_frostguard_mail.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -980,7 +1009,9 @@
             "id": 211,
             "name": "Heavy Plating",
             "icon": "/items/211_heavy_plating.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -998,7 +1029,9 @@
             "id": 212,
             "name": "Ebony Knight Blade",
             "icon": "/items/212_ebony_knight_blade.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -1016,7 +1049,9 @@
             "id": 213,
             "name": "Ivory Greatsword",
             "icon": "/items/213_ivory_greatsword.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -1034,7 +1069,9 @@
             "id": 214,
             "name": "Stormcaller Rod",
             "icon": "/items/214_stormcaller_rod.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -1054,7 +1091,9 @@
             "id": 215,
             "name": "Knight Helm",
             "icon": "/items/215_knight_helm.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -1072,7 +1111,9 @@
             "id": 216,
             "name": "Plate Helm",
             "icon": "/items/216_plate_helm.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -1090,7 +1131,9 @@
             "id": 217,
             "name": "Royal Helm",
             "icon": "/items/217_royal_helm.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -1108,7 +1151,9 @@
             "id": 218,
             "name": "Knight Cuirass",
             "icon": "/items/218_knight_cuirass.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -1126,7 +1171,9 @@
             "id": 219,
             "name": "Plate Body Armor",
             "icon": "/items/219_plate_body_armor.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -1144,7 +1191,9 @@
             "id": 220,
             "name": "Knight Greaves",
             "icon": "/items/220_knight_greaves.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -1162,7 +1211,9 @@
             "id": 221,
             "name": "Plate Boots",
             "icon": "/items/221_plate_boots.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -1180,7 +1231,9 @@
             "id": 222,
             "name": "Knight Gauntlets",
             "icon": "/items/222_knight_gauntlets.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -1198,7 +1251,9 @@
             "id": 223,
             "name": "Knight Belt",
             "icon": "/items/223_knight_belt.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -1216,7 +1271,9 @@
             "id": 224,
             "name": "Knight Pauldrons",
             "icon": "/items/224_knight_pauldrons.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -1234,7 +1291,9 @@
             "id": 225,
             "name": "Silver Signet Ring",
             "icon": "/items/225_silver_signet_ring.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -1253,7 +1312,9 @@
             "id": 226,
             "name": "Ruby Signet Ring",
             "icon": "/items/226_ruby_signet_ring.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -1272,7 +1333,9 @@
             "id": 227,
             "name": "Holy Necklace",
             "icon": "/items/227_holy_necklace.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -1292,7 +1355,9 @@
             "id": 228,
             "name": "Knight Earrings",
             "icon": "/items/228_knight_earrings.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -1310,7 +1375,9 @@
             "id": 229,
             "name": "Scrying Orb",
             "icon": "/items/229_scrying_orb.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -1329,7 +1396,9 @@
             "id": 230,
             "name": "Golden Key",
             "icon": "/items/230_golden_key.png",
-            "heroOwnId": 2,
+            "heroOwnIds": [
+                2
+            ],
             "heroOwners": [
                 "The Knight"
             ],
@@ -1347,7 +1416,9 @@
             "id": 301,
             "name": "Jade Dagger",
             "icon": "/items/301_jade_dagger.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1365,7 +1436,9 @@
             "id": 302,
             "name": "Storm Dagger",
             "icon": "/items/302_storm_dagger.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1384,7 +1457,9 @@
             "id": 303,
             "name": "Stormfang Dagger",
             "icon": "/items/303_stormfang_dagger.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1403,7 +1478,9 @@
             "id": 304,
             "name": "Ornate Dagger",
             "icon": "/items/304_ornate_dagger.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1421,7 +1498,9 @@
             "id": 305,
             "name": "Combat Knife",
             "icon": "/items/305_combat_knife.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1439,7 +1518,9 @@
             "id": 306,
             "name": "Bone Hook",
             "icon": "/items/306_bone_hook.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1457,7 +1538,9 @@
             "id": 307,
             "name": "Serrated Blade",
             "icon": "/items/307_serrated_blade.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1475,7 +1558,9 @@
             "id": 308,
             "name": "Rogue Short Sword",
             "icon": "/items/308_rogue_short_sword.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1493,7 +1578,9 @@
             "id": 309,
             "name": "Void Blade",
             "icon": "/items/309_void_blade.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1512,7 +1599,9 @@
             "id": 310,
             "name": "Copper Katana",
             "icon": "/items/310_copper_katana.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1530,7 +1619,9 @@
             "id": 311,
             "name": "Flaming Scimitar",
             "icon": "/items/311_flaming_scimitar.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1549,7 +1640,9 @@
             "id": 312,
             "name": "Glacial Scepter",
             "icon": "/items/312_glacial_scepter.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1569,7 +1662,9 @@
             "id": 313,
             "name": "Mage Staff",
             "icon": "/items/313_mage_staff.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1588,7 +1683,9 @@
             "id": 314,
             "name": "Flame Wave Blade",
             "icon": "/items/314_flame_wave_blade.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1607,7 +1704,9 @@
             "id": 315,
             "name": "Shadow Hood",
             "icon": "/items/315_shadow_hood.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1626,7 +1725,9 @@
             "id": 316,
             "name": "Scout Tunic",
             "icon": "/items/316_scout_tunic.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1644,7 +1745,9 @@
             "id": 317,
             "name": "Night Tunic",
             "icon": "/items/317_night_tunic.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1662,7 +1765,9 @@
             "id": 318,
             "name": "Shadow Boots",
             "icon": "/items/318_shadow_boots.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1680,7 +1785,9 @@
             "id": 319,
             "name": "Thief Pants",
             "icon": "/items/319_thief_pants.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1698,7 +1805,9 @@
             "id": 320,
             "name": "Thief Gloves",
             "icon": "/items/320_thief_gloves.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1716,7 +1825,9 @@
             "id": 321,
             "name": "Shadow Bracers",
             "icon": "/items/321_shadow_bracers.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1734,7 +1845,9 @@
             "id": 322,
             "name": "Thief Belt",
             "icon": "/items/322_thief_belt.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1752,7 +1865,9 @@
             "id": 323,
             "name": "Poison Ring",
             "icon": "/items/323_poison_ring.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1771,7 +1886,9 @@
             "id": 324,
             "name": "Ruby Ring",
             "icon": "/items/324_ruby_ring.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1790,7 +1907,9 @@
             "id": 325,
             "name": "Thief Amulet",
             "icon": "/items/325_thief_amulet.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1809,7 +1928,9 @@
             "id": 326,
             "name": "Emerald Gem",
             "icon": "/items/326_emerald_gem.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1827,7 +1948,9 @@
             "id": 327,
             "name": "Sapphire Gem",
             "icon": "/items/327_sapphire_gem.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1846,7 +1969,9 @@
             "id": 328,
             "name": "Shadow Earrings",
             "icon": "/items/328_shadow_earrings.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1864,7 +1989,9 @@
             "id": 329,
             "name": "Oyster Mushroom",
             "icon": "/items/329_oyster_mushroom.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1883,7 +2010,9 @@
             "id": 330,
             "name": "Treasure Map",
             "icon": "/items/330_treasure_map.png",
-            "heroOwnId": 3,
+            "heroOwnIds": [
+                3
+            ],
             "heroOwners": [
                 "The Rogue"
             ],
@@ -1898,6 +2027,6 @@
             "effects": []
         }
     ],
-    "generatedAtUtc": "2026-05-26T02:12:16.5990974Z",
+    "generatedAtUtc": "2026-06-01T14:29:36.6485436Z",
     "totalItemCount": 100
 }
