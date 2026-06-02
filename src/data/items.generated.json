@@ -147,7 +147,34 @@
                 "isActive": true,
                 "cooldownSeconds": 5.0
             },
-            "effects": []
+            "effects": [
+                {
+                    "type": "ItemEffect_DealDmg",
+                    "trigger": "CooldownReady",
+                    "text": "Gây 20/40/60/80 sát thương → địch hàng trước (CooldownReady)",
+                    "fields": [
+                        {
+                            "key": "targetType",
+                            "value": "FrontEnemy"
+                        },
+                        {
+                            "key": "triggerType",
+                            "value": "CooldownReady"
+                        }
+                    ]
+                },
+                {
+                    "type": "ItemEffect_Penetrate",
+                    "trigger": "OnDealDamage",
+                    "text": "Xuyên thấu (passive): đánh một mục tiêu địch → địch đứng ngay sau mục tiêu bị trúng nhận 50% sát thương",
+                    "fields": [
+                        {
+                            "key": "triggerType",
+                            "value": "OnDealDamage"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": 5,
@@ -165,9 +192,52 @@
             "stats": {
                 "shopPrice": 10,
                 "isActive": true,
-                "cooldownSeconds": 5.0
+                "cooldownSeconds": 4.0
             },
-            "effects": []
+            "effects": [
+                {
+                    "type": "ItemEffect_DealDmg",
+                    "trigger": "CooldownReady",
+                    "text": "Gây 5/10/15/20 sát thương → địch hàng trước (CooldownReady)",
+                    "fields": [
+                        {
+                            "key": "targetType",
+                            "value": "FrontEnemy"
+                        },
+                        {
+                            "key": "triggerType",
+                            "value": "CooldownReady"
+                        }
+                    ]
+                },
+                {
+                    "type": "ItemEffect_ModifyValue",
+                    "trigger": "OnHaste",
+                    "text": "Khi OnHaste: flat 5/5/5/5 sát thương (trong trận, stack)",
+                    "fields": [
+                        {
+                            "key": "duration",
+                            "value": "Fight"
+                        },
+                        {
+                            "key": "kind",
+                            "value": "Flat"
+                        },
+                        {
+                            "key": "stat",
+                            "value": "Damage"
+                        },
+                        {
+                            "key": "triggerType",
+                            "value": "OnHaste"
+                        },
+                        {
+                            "key": "value",
+                            "value": "5/5/5/5"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": 6,
@@ -245,9 +315,56 @@
             "stats": {
                 "shopPrice": 10,
                 "isActive": true,
-                "cooldownSeconds": 5.0
+                "cooldownSeconds": 3.0
             },
-            "effects": []
+            "effects": [
+                {
+                    "type": "ItemEffect_DealDmg",
+                    "trigger": "CooldownReady",
+                    "text": "Gây 5/10/15/20 sát thương → địch hàng trước (CooldownReady)",
+                    "fields": [
+                        {
+                            "key": "targetType",
+                            "value": "FrontEnemy"
+                        },
+                        {
+                            "key": "triggerType",
+                            "value": "CooldownReady"
+                        }
+                    ]
+                },
+                {
+                    "type": "ItemEffect_Buff",
+                    "trigger": "CooldownReady",
+                    "text": "Buff 1 item (bản thân, Down, tag=None): Haste 1s (CooldownReady)",
+                    "fields": [
+                        {
+                            "key": "buffCount",
+                            "value": "1"
+                        },
+                        {
+                            "key": "buffTarget",
+                            "value": "Self"
+                        },
+                        {
+                            "key": "buffs",
+                            "value": "System.Collections.Generic.List`1[Runtime.Gameplay.MainGame.ItemBuffEntry]"
+                        },
+                        {
+                            "key": "itemTargetType",
+                            "value": "Down"
+                        },
+                        {
+                            "key": "tagFilter",
+                            "value": "None"
+                        },
+                        {
+                            "key": "triggerType",
+                            "value": "CooldownReady"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": 10,
@@ -2027,6 +2144,6 @@
             "effects": []
         }
     ],
-    "generatedAtUtc": "2026-06-01T14:45:48.0771070Z",
+    "generatedAtUtc": "2026-06-02T16:22:08.9226084Z",
     "totalItemCount": 100
 }
