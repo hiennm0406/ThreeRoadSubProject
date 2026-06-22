@@ -1,2149 +1,2117 @@
 {
-    "tags": [
-        {
-            "id": "weapon",
-            "name": "Weapon"
-        },
-        {
-            "id": "armor",
-            "name": "Armor"
-        },
-        {
-            "id": "food",
-            "name": "Food"
-        },
-        {
-            "id": "magic",
-            "name": "Magic"
-        },
-        {
-            "id": "fire",
-            "name": "Fire"
-        },
-        {
-            "id": "ice",
-            "name": "Ice"
-        },
-        {
-            "id": "lightning",
-            "name": "Lightning"
-        },
-        {
-            "id": "heal",
-            "name": "Heal"
-        }
-    ],
-    "items": [
-        {
-            "id": 1,
-            "name": "Kiếm sắt",
-            "icon": "/items/1_kiếm_sắt.png",
-            "heroOwnIds": [
-                1
-            ],
-            "heroOwners": [
-                "R0N1N"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 6.0
-            },
-            "effects": [
-                {
-                    "type": "ItemEffect_DealDmg",
-                    "trigger": "CooldownReady",
-                    "text": "Gây 10/20/30/40 sát thương → địch hàng trước (CooldownReady)",
-                    "fields": [
-                        {
-                            "key": "targetType",
-                            "value": "FrontEnemy"
-                        },
-                        {
-                            "key": "triggerType",
-                            "value": "CooldownReady"
-                        }
-                    ]
-                },
-                {
-                    "type": "ItemEffect_StaticToDmg",
-                    "trigger": "None",
-                    "text": "Với mỗi 5/5/5/5 static trên người nhân vật thì tăng 2/4/6/8 sát thương cho vũ khí này (None)",
-                    "fields": [
-                        {
-                            "key": "damagePerUnit",
-                            "value": "2/4/6/8"
-                        },
-                        {
-                            "key": "staticPerUnit",
-                            "value": "5/5/5/5"
-                        },
-                        {
-                            "key": "triggerType",
-                            "value": "None"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "name": "Khiên sắt",
-            "icon": "/items/2_khiên_sắt.png",
-            "heroOwnIds": [
-                1
-            ],
-            "heroOwners": [
-                "R0N1N"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 3,
-            "name": "Gậy gỗ",
-            "icon": "/items/3_gậy_gỗ.png",
-            "heroOwnIds": [
-                1
-            ],
-            "heroOwners": [
-                "R0N1N"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 4,
-            "name": "Giáo",
-            "icon": "/items/4_giáo.png",
-            "heroOwnIds": [
-                1
-            ],
-            "heroOwners": [
-                "R0N1N"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": [
-                {
-                    "type": "ItemEffect_DealDmg",
-                    "trigger": "CooldownReady",
-                    "text": "Gây 20/40/60/80 sát thương → địch hàng trước (CooldownReady)",
-                    "fields": [
-                        {
-                            "key": "targetType",
-                            "value": "FrontEnemy"
-                        },
-                        {
-                            "key": "triggerType",
-                            "value": "CooldownReady"
-                        }
-                    ]
-                },
-                {
-                    "type": "ItemEffect_Penetrate",
-                    "trigger": "OnDealDamage",
-                    "text": "Xuyên thấu (passive): đánh một mục tiêu địch → địch đứng ngay sau mục tiêu bị trúng nhận 50% sát thương",
-                    "fields": [
-                        {
-                            "key": "triggerType",
-                            "value": "OnDealDamage"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": 5,
-            "name": "Dao quân dụng",
-            "icon": "/items/5_dao_quân_dụng.png",
-            "heroOwnIds": [
-                1
-            ],
-            "heroOwners": [
-                "R0N1N"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 4.0
-            },
-            "effects": [
-                {
-                    "type": "ItemEffect_DealDmg",
-                    "trigger": "CooldownReady",
-                    "text": "Gây 5/10/15/20 sát thương → địch hàng trước (CooldownReady)",
-                    "fields": [
-                        {
-                            "key": "targetType",
-                            "value": "FrontEnemy"
-                        },
-                        {
-                            "key": "triggerType",
-                            "value": "CooldownReady"
-                        }
-                    ]
-                },
-                {
-                    "type": "ItemEffect_ModifyValue",
-                    "trigger": "OnHaste",
-                    "text": "Khi OnHaste: flat 5/5/5/5 sát thương (trong trận, stack)",
-                    "fields": [
-                        {
-                            "key": "duration",
-                            "value": "Fight"
-                        },
-                        {
-                            "key": "kind",
-                            "value": "Flat"
-                        },
-                        {
-                            "key": "stat",
-                            "value": "Damage"
-                        },
-                        {
-                            "key": "triggerType",
-                            "value": "OnHaste"
-                        },
-                        {
-                            "key": "value",
-                            "value": "5/5/5/5"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": 6,
-            "name": "Côn sắt",
-            "icon": "/items/6_côn_sắt.png",
-            "heroOwnIds": [
-                1
-            ],
-            "heroOwners": [
-                "R0N1N"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 7,
-            "name": "Heavy Hammer",
-            "icon": "/items/7_heavy_hammer.png",
-            "heroOwnIds": [
-                1
-            ],
-            "heroOwners": [
-                "R0N1N"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 6.5
-            },
-            "effects": []
-        },
-        {
-            "id": 8,
-            "name": "Twin Daggers",
-            "icon": "/items/8_twin_daggers.png",
-            "heroOwnIds": [
-                1
-            ],
-            "heroOwners": [
-                "R0N1N"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 9,
-            "name": "Knuckles",
-            "icon": "/items/9_knuckles.png",
-            "heroOwnIds": [
-                1
-            ],
-            "heroOwners": [
-                "R0N1N"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 3.0
-            },
-            "effects": [
-                {
-                    "type": "ItemEffect_DealDmg",
-                    "trigger": "CooldownReady",
-                    "text": "Gây 5/10/15/20 sát thương → địch hàng trước (CooldownReady)",
-                    "fields": [
-                        {
-                            "key": "targetType",
-                            "value": "FrontEnemy"
-                        },
-                        {
-                            "key": "triggerType",
-                            "value": "CooldownReady"
-                        }
-                    ]
-                },
-                {
-                    "type": "ItemEffect_Buff",
-                    "trigger": "CooldownReady",
-                    "text": "Buff 1 item (bản thân, Down, tag=None): Haste 1s (CooldownReady)",
-                    "fields": [
-                        {
-                            "key": "buffCount",
-                            "value": "1"
-                        },
-                        {
-                            "key": "buffTarget",
-                            "value": "Self"
-                        },
-                        {
-                            "key": "buffs",
-                            "value": "System.Collections.Generic.List`1[Runtime.Gameplay.MainGame.ItemBuffEntry]"
-                        },
-                        {
-                            "key": "itemTargetType",
-                            "value": "Down"
-                        },
-                        {
-                            "key": "tagFilter",
-                            "value": "None"
-                        },
-                        {
-                            "key": "triggerType",
-                            "value": "CooldownReady"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": 10,
-            "name": "Huy hiệu kẻ vô địch",
-            "icon": "/items/10_huy_hiệu_kẻ_vô_địch.png",
-            "heroOwnIds": [
-                1
-            ],
-            "heroOwners": [
-                "R0N1N"
-            ],
-            "tags": [
-                "magic"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 101,
-            "name": "Bao tay chiến binh",
-            "icon": "/items/101_bao_tay_chiến_binh.png",
-            "heroOwnIds": [
-                1
-            ],
-            "heroOwners": [
-                "R0N1N"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 102,
-            "name": "Warrior Eye Glass",
-            "icon": "/items/102_warrior_eye_glass.png",
-            "heroOwnIds": [
-                1
-            ],
-            "heroOwners": [
-                "R0N1N"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 103,
-            "name": "Tay cơ khí",
-            "icon": "/items/103_tay_cơ_khí.png",
-            "heroOwnIds": [
-                1
-            ],
-            "heroOwners": [
-                "R0N1N"
-            ],
-            "tags": [
-                "armor",
-                "magic"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 104,
-            "name": "Lõi điện",
-            "icon": "/items/104_lõi_điện.png",
-            "heroOwnIds": [
-                1
-            ],
-            "heroOwners": [
-                "R0N1N"
-            ],
-            "tags": [
-                "magic",
-                "lightning"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 105,
-            "name": "Laser Sword",
-            "icon": "/items/105_laser_sword.png",
-            "heroOwnIds": [
-                1
-            ],
-            "heroOwners": [
-                "R0N1N"
-            ],
-            "tags": [
-                "weapon",
-                "magic",
-                "fire"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 106,
-            "name": "Vòm trường lực",
-            "icon": "/items/106_vòm_trường_lực.png",
-            "heroOwnIds": [
-                1
-            ],
-            "heroOwners": [
-                "R0N1N"
-            ],
-            "tags": [
-                "armor",
-                "magic"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 107,
-            "name": "Pin điện",
-            "icon": "/items/107_pin_điện.png",
-            "heroOwnIds": [
-                1
-            ],
-            "heroOwners": [
-                "R0N1N"
-            ],
-            "tags": [
-                "magic",
-                "lightning"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 108,
-            "name": "Quạt tản nhiệt",
-            "icon": "/items/108_quạt_tản_nhiệt.png",
-            "heroOwnIds": [
-                1
-            ],
-            "heroOwners": [
-                "R0N1N"
-            ],
-            "tags": [
-                "magic"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 109,
-            "name": "Repair Drone",
-            "icon": "/items/109_repair_drone.png",
-            "heroOwnIds": [
-                1
-            ],
-            "heroOwners": [
-                "R0N1N"
-            ],
-            "tags": [
-                "magic",
-                "heal"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 110,
-            "name": "Killer Drone",
-            "icon": "/items/110_killer_drone.png",
-            "heroOwnIds": [
-                1
-            ],
-            "heroOwners": [
-                "R0N1N"
-            ],
-            "tags": [
-                "weapon",
-                "magic"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 111,
-            "name": "War Sword",
-            "icon": "/items/111_war_sword.png",
-            "heroOwnIds": [],
-            "heroOwners": [],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 112,
-            "name": "Falmer War Axe",
-            "icon": "/items/112_falmer_war_axe.png",
-            "heroOwnIds": [],
-            "heroOwners": [],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 113,
-            "name": "Bloody Ritual Axe",
-            "icon": "/items/113_bloody_ritual_axe.png",
-            "heroOwnIds": [],
-            "heroOwners": [],
-            "tags": [
-                "weapon",
-                "fire"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 6.0
-            },
-            "effects": []
-        },
-        {
-            "id": 114,
-            "name": "War Hammer",
-            "icon": "/items/114_war_hammer.png",
-            "heroOwnIds": [],
-            "heroOwners": [],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 6.5
-            },
-            "effects": []
-        },
-        {
-            "id": 115,
-            "name": "Hooked Fire Blade",
-            "icon": "/items/115_hooked_fire_blade.png",
-            "heroOwnIds": [],
-            "heroOwners": [],
-            "tags": [
-                "weapon",
-                "fire"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 116,
-            "name": "Falmer Cuirass",
-            "icon": "/items/116_falmer_cuirass.png",
-            "heroOwnIds": [],
-            "heroOwners": [],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 117,
-            "name": "Iron Body Armor",
-            "icon": "/items/117_iron_body_armor.png",
-            "heroOwnIds": [],
-            "heroOwners": [],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 118,
-            "name": "Reinforced Mail",
-            "icon": "/items/118_reinforced_mail.png",
-            "heroOwnIds": [],
-            "heroOwners": [],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 119,
-            "name": "Horned Greathelm",
-            "icon": "/items/119_horned_greathelm.png",
-            "heroOwnIds": [],
-            "heroOwners": [],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 120,
-            "name": "Leather March Boots",
-            "icon": "/items/120_leather_march_boots.png",
-            "heroOwnIds": [],
-            "heroOwners": [],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 121,
-            "name": "Iron Pauldrons",
-            "icon": "/items/121_iron_pauldrons.png",
-            "heroOwnIds": [],
-            "heroOwners": [],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 122,
-            "name": "Warrior Belt",
-            "icon": "/items/122_warrior_belt.png",
-            "heroOwnIds": [],
-            "heroOwners": [],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 123,
-            "name": "Steel Bracers",
-            "icon": "/items/123_steel_bracers.png",
-            "heroOwnIds": [],
-            "heroOwners": [],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 124,
-            "name": "Round Shield",
-            "icon": "/items/124_round_shield.png",
-            "heroOwnIds": [],
-            "heroOwners": [],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 125,
-            "name": "Kite Shield",
-            "icon": "/items/125_kite_shield.png",
-            "heroOwnIds": [],
-            "heroOwners": [],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 126,
-            "name": "Whetstone",
-            "icon": "/items/126_whetstone.png",
-            "heroOwnIds": [],
-            "heroOwners": [],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 4.0
-            },
-            "effects": []
-        },
-        {
-            "id": 127,
-            "name": "Camp Cheese",
-            "icon": "/items/127_camp_cheese.png",
-            "heroOwnIds": [],
-            "heroOwners": [],
-            "tags": [
-                "food",
-                "heal"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 8.0
-            },
-            "effects": []
-        },
-        {
-            "id": 128,
-            "name": "Basil Herbs",
-            "icon": "/items/128_basil_herbs.png",
-            "heroOwnIds": [],
-            "heroOwners": [],
-            "tags": [
-                "food",
-                "heal"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 7.0
-            },
-            "effects": []
-        },
-        {
-            "id": 129,
-            "name": "Kindling Bundle",
-            "icon": "/items/129_kindling_bundle.png",
-            "heroOwnIds": [],
-            "heroOwners": [],
-            "tags": [
-                "food",
-                "fire"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 130,
-            "name": "Dwarven Tunic",
-            "icon": "/items/130_dwarven_tunic.png",
-            "heroOwnIds": [],
-            "heroOwners": [],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 201,
-            "name": "Silver Blade",
-            "icon": "/items/201_silver_blade.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 202,
-            "name": "Silver Rapier",
-            "icon": "/items/202_silver_rapier.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 203,
-            "name": "Golden Rapier",
-            "icon": "/items/203_golden_rapier.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 204,
-            "name": "Golden Shortsword",
-            "icon": "/items/204_golden_shortsword.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 205,
-            "name": "Pale Longsword",
-            "icon": "/items/205_pale_longsword.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 206,
-            "name": "Teal Grip Sword",
-            "icon": "/items/206_teal_grip_sword.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 207,
-            "name": "Ruby Guard Sword",
-            "icon": "/items/207_ruby_guard_sword.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 208,
-            "name": "Holy Blade",
-            "icon": "/items/208_holy_blade.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "weapon",
-                "magic"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 209,
-            "name": "Arcane Bulwark",
-            "icon": "/items/209_arcane_bulwark.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "armor",
-                "magic"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 210,
-            "name": "Frostguard Mail",
-            "icon": "/items/210_frostguard_mail.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "armor",
-                "ice"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 211,
-            "name": "Heavy Plating",
-            "icon": "/items/211_heavy_plating.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 212,
-            "name": "Ebony Knight Blade",
-            "icon": "/items/212_ebony_knight_blade.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 213,
-            "name": "Ivory Greatsword",
-            "icon": "/items/213_ivory_greatsword.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 214,
-            "name": "Stormcaller Rod",
-            "icon": "/items/214_stormcaller_rod.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "weapon",
-                "magic",
-                "lightning"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.5
-            },
-            "effects": []
-        },
-        {
-            "id": 215,
-            "name": "Knight Helm",
-            "icon": "/items/215_knight_helm.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 216,
-            "name": "Plate Helm",
-            "icon": "/items/216_plate_helm.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 217,
-            "name": "Royal Helm",
-            "icon": "/items/217_royal_helm.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 218,
-            "name": "Knight Cuirass",
-            "icon": "/items/218_knight_cuirass.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 219,
-            "name": "Plate Body Armor",
-            "icon": "/items/219_plate_body_armor.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 220,
-            "name": "Knight Greaves",
-            "icon": "/items/220_knight_greaves.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 221,
-            "name": "Plate Boots",
-            "icon": "/items/221_plate_boots.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 222,
-            "name": "Knight Gauntlets",
-            "icon": "/items/222_knight_gauntlets.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 223,
-            "name": "Knight Belt",
-            "icon": "/items/223_knight_belt.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 224,
-            "name": "Knight Pauldrons",
-            "icon": "/items/224_knight_pauldrons.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 225,
-            "name": "Silver Signet Ring",
-            "icon": "/items/225_silver_signet_ring.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "armor",
-                "magic"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 226,
-            "name": "Ruby Signet Ring",
-            "icon": "/items/226_ruby_signet_ring.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "armor",
-                "magic"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 227,
-            "name": "Holy Necklace",
-            "icon": "/items/227_holy_necklace.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "armor",
-                "magic",
-                "heal"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 228,
-            "name": "Knight Earrings",
-            "icon": "/items/228_knight_earrings.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 229,
-            "name": "Scrying Orb",
-            "icon": "/items/229_scrying_orb.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "magic",
-                "lightning"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 6.0
-            },
-            "effects": []
-        },
-        {
-            "id": 230,
-            "name": "Golden Key",
-            "icon": "/items/230_golden_key.png",
-            "heroOwnIds": [
-                2
-            ],
-            "heroOwners": [
-                "The Knight"
-            ],
-            "tags": [
-                "magic"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 8.0
-            },
-            "effects": []
-        },
-        {
-            "id": 301,
-            "name": "Jade Dagger",
-            "icon": "/items/301_jade_dagger.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 3.5
-            },
-            "effects": []
-        },
-        {
-            "id": 302,
-            "name": "Storm Dagger",
-            "icon": "/items/302_storm_dagger.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "weapon",
-                "lightning"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 3.5
-            },
-            "effects": []
-        },
-        {
-            "id": 303,
-            "name": "Stormfang Dagger",
-            "icon": "/items/303_stormfang_dagger.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "weapon",
-                "lightning"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 3.5
-            },
-            "effects": []
-        },
-        {
-            "id": 304,
-            "name": "Ornate Dagger",
-            "icon": "/items/304_ornate_dagger.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 3.0
-            },
-            "effects": []
-        },
-        {
-            "id": 305,
-            "name": "Combat Knife",
-            "icon": "/items/305_combat_knife.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 3.0
-            },
-            "effects": []
-        },
-        {
-            "id": 306,
-            "name": "Bone Hook",
-            "icon": "/items/306_bone_hook.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 4.0
-            },
-            "effects": []
-        },
-        {
-            "id": 307,
-            "name": "Serrated Blade",
-            "icon": "/items/307_serrated_blade.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 3.5
-            },
-            "effects": []
-        },
-        {
-            "id": 308,
-            "name": "Rogue Short Sword",
-            "icon": "/items/308_rogue_short_sword.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 4.0
-            },
-            "effects": []
-        },
-        {
-            "id": 309,
-            "name": "Void Blade",
-            "icon": "/items/309_void_blade.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "weapon",
-                "magic"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 4.0
-            },
-            "effects": []
-        },
-        {
-            "id": 310,
-            "name": "Copper Katana",
-            "icon": "/items/310_copper_katana.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "weapon"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 4.0
-            },
-            "effects": []
-        },
-        {
-            "id": 311,
-            "name": "Flaming Scimitar",
-            "icon": "/items/311_flaming_scimitar.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "weapon",
-                "fire"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 4.0
-            },
-            "effects": []
-        },
-        {
-            "id": 312,
-            "name": "Glacial Scepter",
-            "icon": "/items/312_glacial_scepter.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "weapon",
-                "magic",
-                "ice"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 313,
-            "name": "Mage Staff",
-            "icon": "/items/313_mage_staff.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "weapon",
-                "magic"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 5.0
-            },
-            "effects": []
-        },
-        {
-            "id": 314,
-            "name": "Flame Wave Blade",
-            "icon": "/items/314_flame_wave_blade.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "weapon",
-                "fire"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 4.0
-            },
-            "effects": []
-        },
-        {
-            "id": 315,
-            "name": "Shadow Hood",
-            "icon": "/items/315_shadow_hood.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "armor",
-                "magic"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 316,
-            "name": "Scout Tunic",
-            "icon": "/items/316_scout_tunic.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 317,
-            "name": "Night Tunic",
-            "icon": "/items/317_night_tunic.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 318,
-            "name": "Shadow Boots",
-            "icon": "/items/318_shadow_boots.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 319,
-            "name": "Thief Pants",
-            "icon": "/items/319_thief_pants.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 320,
-            "name": "Thief Gloves",
-            "icon": "/items/320_thief_gloves.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 321,
-            "name": "Shadow Bracers",
-            "icon": "/items/321_shadow_bracers.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 322,
-            "name": "Thief Belt",
-            "icon": "/items/322_thief_belt.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 323,
-            "name": "Poison Ring",
-            "icon": "/items/323_poison_ring.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "armor",
-                "magic"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 324,
-            "name": "Ruby Ring",
-            "icon": "/items/324_ruby_ring.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "armor",
-                "magic"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 325,
-            "name": "Thief Amulet",
-            "icon": "/items/325_thief_amulet.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "armor",
-                "magic"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 326,
-            "name": "Emerald Gem",
-            "icon": "/items/326_emerald_gem.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "magic"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 6.0
-            },
-            "effects": []
-        },
-        {
-            "id": 327,
-            "name": "Sapphire Gem",
-            "icon": "/items/327_sapphire_gem.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "magic",
-                "ice"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 6.0
-            },
-            "effects": []
-        },
-        {
-            "id": 328,
-            "name": "Shadow Earrings",
-            "icon": "/items/328_shadow_earrings.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "armor"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": false,
-                "cooldownSeconds": 0.0
-            },
-            "effects": []
-        },
-        {
-            "id": 329,
-            "name": "Oyster Mushroom",
-            "icon": "/items/329_oyster_mushroom.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "food",
-                "heal"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 7.0
-            },
-            "effects": []
-        },
-        {
-            "id": 330,
-            "name": "Treasure Map",
-            "icon": "/items/330_treasure_map.png",
-            "heroOwnIds": [
-                3
-            ],
-            "heroOwners": [
-                "The Rogue"
-            ],
-            "tags": [
-                "magic"
-            ],
-            "stats": {
-                "shopPrice": 10,
-                "isActive": true,
-                "cooldownSeconds": 9.0
-            },
-            "effects": []
-        }
-    ],
-    "generatedAtUtc": "2026-06-02T16:22:08.9226084Z",
-    "totalItemCount": 100
+  "game": "Three Remain",
+  "version": 1,
+  "exportedAt": "2026-06-22T16:22:32.1469533Z",
+  "sets": [
+    {
+      "id": "sentinel",
+      "name": "Sentinel",
+      "color": "#60a5fa"
+    },
+    {
+      "id": "thornlord",
+      "name": "Thornlord",
+      "color": "#84cc16"
+    },
+    {
+      "id": "bloodreaver",
+      "name": "Bloodreaver",
+      "color": "#f43f5e"
+    }
+  ],
+  "slots": [
+    {
+      "id": "hat",
+      "name": "Hat"
+    },
+    {
+      "id": "body",
+      "name": "Body"
+    },
+    {
+      "id": "shoes",
+      "name": "Shoes"
+    },
+    {
+      "id": "gloves",
+      "name": "Gloves"
+    },
+    {
+      "id": "cloak",
+      "name": "Cloak"
+    },
+    {
+      "id": "ring",
+      "name": "Ring"
+    },
+    {
+      "id": "necklace",
+      "name": "Necklace"
+    },
+    {
+      "id": "hand",
+      "name": "Hand"
+    },
+    {
+      "id": "belt",
+      "name": "Belt"
+    }
+  ],
+  "heroes": [
+    {
+      "id": 1,
+      "name": "Knight",
+      "icon": null,
+      "baseStat": {
+        "hp": 1200,
+        "armor": 80,
+        "damage": 100,
+        "speed": 1.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": 11,
+      "name": "Sentinel Helm",
+      "level": 1,
+      "setGroup": "sentinel",
+      "slot": "hat",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 3,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 12,
+      "name": "Sentinel Helm",
+      "level": 2,
+      "setGroup": "sentinel",
+      "slot": "hat",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 5,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 13,
+      "name": "Sentinel Helm",
+      "level": 3,
+      "setGroup": "sentinel",
+      "slot": "hat",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 8,
+        "armor": 1,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 14,
+      "name": "Sentinel Helm",
+      "level": 4,
+      "setGroup": "sentinel",
+      "slot": "hat",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 13,
+        "armor": 2,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 21,
+      "name": "Sentinel Armor",
+      "level": 1,
+      "setGroup": "sentinel",
+      "slot": "body",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 5,
+        "armor": 1,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 22,
+      "name": "Sentinel Armor",
+      "level": 2,
+      "setGroup": "sentinel",
+      "slot": "body",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 8,
+        "armor": 2,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 23,
+      "name": "Sentinel Armor",
+      "level": 3,
+      "setGroup": "sentinel",
+      "slot": "body",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 12,
+        "armor": 3,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 24,
+      "name": "Sentinel Armor",
+      "level": 4,
+      "setGroup": "sentinel",
+      "slot": "body",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 18,
+        "armor": 5,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 31,
+      "name": "Sentinel Boots",
+      "level": 1,
+      "setGroup": "sentinel",
+      "slot": "shoes",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 2,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 32,
+      "name": "Sentinel Boots",
+      "level": 2,
+      "setGroup": "sentinel",
+      "slot": "shoes",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 4,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 33,
+      "name": "Sentinel Boots",
+      "level": 3,
+      "setGroup": "sentinel",
+      "slot": "shoes",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 6,
+        "armor": 0,
+        "damage": 0,
+        "speed": 1.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 34,
+      "name": "Sentinel Boots",
+      "level": 4,
+      "setGroup": "sentinel",
+      "slot": "shoes",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 10,
+        "armor": 0,
+        "damage": 0,
+        "speed": 2.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 41,
+      "name": "Sentinel Gauntlets",
+      "level": 1,
+      "setGroup": "sentinel",
+      "slot": "gloves",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 1,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 42,
+      "name": "Sentinel Gauntlets",
+      "level": 2,
+      "setGroup": "sentinel",
+      "slot": "gloves",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 2,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 43,
+      "name": "Sentinel Gauntlets",
+      "level": 3,
+      "setGroup": "sentinel",
+      "slot": "gloves",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 3,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 44,
+      "name": "Sentinel Gauntlets",
+      "level": 4,
+      "setGroup": "sentinel",
+      "slot": "gloves",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 5,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 51,
+      "name": "Sentinel Cloak",
+      "level": 1,
+      "setGroup": "sentinel",
+      "slot": "cloak",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 3,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 52,
+      "name": "Sentinel Cloak",
+      "level": 2,
+      "setGroup": "sentinel",
+      "slot": "cloak",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 5,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 53,
+      "name": "Sentinel Cloak",
+      "level": 3,
+      "setGroup": "sentinel",
+      "slot": "cloak",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 8,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 54,
+      "name": "Sentinel Cloak",
+      "level": 4,
+      "setGroup": "sentinel",
+      "slot": "cloak",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 13,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 61,
+      "name": "Sentinel Ring",
+      "level": 1,
+      "setGroup": "sentinel",
+      "slot": "ring",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 2,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 62,
+      "name": "Sentinel Ring",
+      "level": 2,
+      "setGroup": "sentinel",
+      "slot": "ring",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 4,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 63,
+      "name": "Sentinel Ring",
+      "level": 3,
+      "setGroup": "sentinel",
+      "slot": "ring",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 6,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 64,
+      "name": "Sentinel Ring",
+      "level": 4,
+      "setGroup": "sentinel",
+      "slot": "ring",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 10,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 71,
+      "name": "Sentinel Pendant",
+      "level": 1,
+      "setGroup": "sentinel",
+      "slot": "necklace",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 3,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 72,
+      "name": "Sentinel Pendant",
+      "level": 2,
+      "setGroup": "sentinel",
+      "slot": "necklace",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 5,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 73,
+      "name": "Sentinel Pendant",
+      "level": 3,
+      "setGroup": "sentinel",
+      "slot": "necklace",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 8,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 74,
+      "name": "Sentinel Pendant",
+      "level": 4,
+      "setGroup": "sentinel",
+      "slot": "necklace",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 13,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 81,
+      "name": "Sentinel Belt",
+      "level": 1,
+      "setGroup": "sentinel",
+      "slot": "belt",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 2,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 82,
+      "name": "Sentinel Belt",
+      "level": 2,
+      "setGroup": "sentinel",
+      "slot": "belt",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 4,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 83,
+      "name": "Sentinel Belt",
+      "level": 3,
+      "setGroup": "sentinel",
+      "slot": "belt",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 6,
+        "armor": 1,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 84,
+      "name": "Sentinel Belt",
+      "level": 4,
+      "setGroup": "sentinel",
+      "slot": "belt",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 10,
+        "armor": 2,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 91,
+      "name": "Sentinel Greatsword",
+      "level": 1,
+      "setGroup": "sentinel",
+      "slot": "hand",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 3,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 92,
+      "name": "Sentinel Greatsword",
+      "level": 2,
+      "setGroup": "sentinel",
+      "slot": "hand",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 5,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 93,
+      "name": "Sentinel Greatsword",
+      "level": 3,
+      "setGroup": "sentinel",
+      "slot": "hand",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 8,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 94,
+      "name": "Sentinel Greatsword",
+      "level": 4,
+      "setGroup": "sentinel",
+      "slot": "hand",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 13,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 101,
+      "name": "Sentinel Shield",
+      "level": 1,
+      "setGroup": "sentinel",
+      "slot": "hand",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 1,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 102,
+      "name": "Sentinel Shield",
+      "level": 2,
+      "setGroup": "sentinel",
+      "slot": "hand",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 2,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 103,
+      "name": "Sentinel Shield",
+      "level": 3,
+      "setGroup": "sentinel",
+      "slot": "hand",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 3,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 104,
+      "name": "Sentinel Shield",
+      "level": 4,
+      "setGroup": "sentinel",
+      "slot": "hand",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 5,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 111,
+      "name": "Thorn Crown",
+      "level": 1,
+      "setGroup": "thornlord",
+      "slot": "hat",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 2,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 112,
+      "name": "Thorn Crown",
+      "level": 2,
+      "setGroup": "thornlord",
+      "slot": "hat",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 4,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 113,
+      "name": "Thorn Crown",
+      "level": 3,
+      "setGroup": "thornlord",
+      "slot": "hat",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 6,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 114,
+      "name": "Thorn Crown",
+      "level": 4,
+      "setGroup": "thornlord",
+      "slot": "hat",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 13,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 121,
+      "name": "Thorn Mail",
+      "level": 1,
+      "setGroup": "thornlord",
+      "slot": "body",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 4,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 122,
+      "name": "Thorn Mail",
+      "level": 2,
+      "setGroup": "thornlord",
+      "slot": "body",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 6,
+        "armor": 1,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 123,
+      "name": "Thorn Mail",
+      "level": 3,
+      "setGroup": "thornlord",
+      "slot": "body",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 10,
+        "armor": 2,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 124,
+      "name": "Thorn Mail",
+      "level": 4,
+      "setGroup": "thornlord",
+      "slot": "body",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 16,
+        "armor": 4,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 131,
+      "name": "Thorn Walkers",
+      "level": 1,
+      "setGroup": "thornlord",
+      "slot": "shoes",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 2,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 132,
+      "name": "Thorn Walkers",
+      "level": 2,
+      "setGroup": "thornlord",
+      "slot": "shoes",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 4,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 133,
+      "name": "Thorn Walkers",
+      "level": 3,
+      "setGroup": "thornlord",
+      "slot": "shoes",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 6,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 134,
+      "name": "Thorn Walkers",
+      "level": 4,
+      "setGroup": "thornlord",
+      "slot": "shoes",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 10,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 141,
+      "name": "Thorn Claws",
+      "level": 1,
+      "setGroup": "thornlord",
+      "slot": "gloves",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 1,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 142,
+      "name": "Thorn Claws",
+      "level": 2,
+      "setGroup": "thornlord",
+      "slot": "gloves",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 2,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 143,
+      "name": "Thorn Claws",
+      "level": 3,
+      "setGroup": "thornlord",
+      "slot": "gloves",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 4,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 144,
+      "name": "Thorn Claws",
+      "level": 4,
+      "setGroup": "thornlord",
+      "slot": "gloves",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 6,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 151,
+      "name": "Thorn Mantle",
+      "level": 1,
+      "setGroup": "thornlord",
+      "slot": "cloak",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 2,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 152,
+      "name": "Thorn Mantle",
+      "level": 2,
+      "setGroup": "thornlord",
+      "slot": "cloak",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 4,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 153,
+      "name": "Thorn Mantle",
+      "level": 3,
+      "setGroup": "thornlord",
+      "slot": "cloak",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 6,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 154,
+      "name": "Thorn Mantle",
+      "level": 4,
+      "setGroup": "thornlord",
+      "slot": "cloak",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 10,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 161,
+      "name": "Thorn Ring",
+      "level": 1,
+      "setGroup": "thornlord",
+      "slot": "ring",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 1,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 162,
+      "name": "Thorn Ring",
+      "level": 2,
+      "setGroup": "thornlord",
+      "slot": "ring",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 2,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 163,
+      "name": "Thorn Ring",
+      "level": 3,
+      "setGroup": "thornlord",
+      "slot": "ring",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 3,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 164,
+      "name": "Thorn Ring",
+      "level": 4,
+      "setGroup": "thornlord",
+      "slot": "ring",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 5,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 171,
+      "name": "Thorn Necklace",
+      "level": 1,
+      "setGroup": "thornlord",
+      "slot": "necklace",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 2,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 172,
+      "name": "Thorn Necklace",
+      "level": 2,
+      "setGroup": "thornlord",
+      "slot": "necklace",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 4,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 173,
+      "name": "Thorn Necklace",
+      "level": 3,
+      "setGroup": "thornlord",
+      "slot": "necklace",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 6,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 174,
+      "name": "Thorn Necklace",
+      "level": 4,
+      "setGroup": "thornlord",
+      "slot": "necklace",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 10,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 181,
+      "name": "Thorn Belt",
+      "level": 1,
+      "setGroup": "thornlord",
+      "slot": "belt",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 2,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 182,
+      "name": "Thorn Belt",
+      "level": 2,
+      "setGroup": "thornlord",
+      "slot": "belt",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 4,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 183,
+      "name": "Thorn Belt",
+      "level": 3,
+      "setGroup": "thornlord",
+      "slot": "belt",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 6,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 184,
+      "name": "Thorn Belt",
+      "level": 4,
+      "setGroup": "thornlord",
+      "slot": "belt",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 10,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 191,
+      "name": "Thorn Hammer",
+      "level": 1,
+      "setGroup": "thornlord",
+      "slot": "hand",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 3,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 192,
+      "name": "Thorn Hammer",
+      "level": 2,
+      "setGroup": "thornlord",
+      "slot": "hand",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 5,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 193,
+      "name": "Thorn Hammer",
+      "level": 3,
+      "setGroup": "thornlord",
+      "slot": "hand",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 8,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 194,
+      "name": "Thorn Hammer",
+      "level": 4,
+      "setGroup": "thornlord",
+      "slot": "hand",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 13,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 201,
+      "name": "Thorn Shield",
+      "level": 1,
+      "setGroup": "thornlord",
+      "slot": "hand",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 1,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 202,
+      "name": "Thorn Shield",
+      "level": 2,
+      "setGroup": "thornlord",
+      "slot": "hand",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 2,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 203,
+      "name": "Thorn Shield",
+      "level": 3,
+      "setGroup": "thornlord",
+      "slot": "hand",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 3,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 204,
+      "name": "Thorn Shield",
+      "level": 4,
+      "setGroup": "thornlord",
+      "slot": "hand",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 5,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 211,
+      "name": "Blood Hood",
+      "level": 1,
+      "setGroup": "bloodreaver",
+      "slot": "hat",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 2,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 212,
+      "name": "Blood Hood",
+      "level": 2,
+      "setGroup": "bloodreaver",
+      "slot": "hat",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 4,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 213,
+      "name": "Blood Hood",
+      "level": 3,
+      "setGroup": "bloodreaver",
+      "slot": "hat",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 6,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 214,
+      "name": "Blood Hood",
+      "level": 4,
+      "setGroup": "bloodreaver",
+      "slot": "hat",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 10,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 221,
+      "name": "Blood Armor",
+      "level": 1,
+      "setGroup": "bloodreaver",
+      "slot": "body",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 4,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 222,
+      "name": "Blood Armor",
+      "level": 2,
+      "setGroup": "bloodreaver",
+      "slot": "body",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 7,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 223,
+      "name": "Blood Armor",
+      "level": 3,
+      "setGroup": "bloodreaver",
+      "slot": "body",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 10,
+        "armor": 1,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 224,
+      "name": "Blood Armor",
+      "level": 4,
+      "setGroup": "bloodreaver",
+      "slot": "body",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 16,
+        "armor": 2,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 231,
+      "name": "Blood Boots",
+      "level": 1,
+      "setGroup": "bloodreaver",
+      "slot": "shoes",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 0,
+        "speed": 1.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 232,
+      "name": "Blood Boots",
+      "level": 2,
+      "setGroup": "bloodreaver",
+      "slot": "shoes",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 0,
+        "speed": 2.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 233,
+      "name": "Blood Boots",
+      "level": 3,
+      "setGroup": "bloodreaver",
+      "slot": "shoes",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 0,
+        "speed": 3.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 234,
+      "name": "Blood Boots",
+      "level": 4,
+      "setGroup": "bloodreaver",
+      "slot": "shoes",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 0,
+        "speed": 5.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 241,
+      "name": "Blood Gloves",
+      "level": 1,
+      "setGroup": "bloodreaver",
+      "slot": "gloves",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 1,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 242,
+      "name": "Blood Gloves",
+      "level": 2,
+      "setGroup": "bloodreaver",
+      "slot": "gloves",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 2,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 243,
+      "name": "Blood Gloves",
+      "level": 3,
+      "setGroup": "bloodreaver",
+      "slot": "gloves",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 4,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 244,
+      "name": "Blood Gloves",
+      "level": 4,
+      "setGroup": "bloodreaver",
+      "slot": "gloves",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 6,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 251,
+      "name": "Blood Cloak",
+      "level": 1,
+      "setGroup": "bloodreaver",
+      "slot": "cloak",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 2,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 252,
+      "name": "Blood Cloak",
+      "level": 2,
+      "setGroup": "bloodreaver",
+      "slot": "cloak",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 4,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 253,
+      "name": "Blood Cloak",
+      "level": 3,
+      "setGroup": "bloodreaver",
+      "slot": "cloak",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 6,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 254,
+      "name": "Blood Cloak",
+      "level": 4,
+      "setGroup": "bloodreaver",
+      "slot": "cloak",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 10,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 261,
+      "name": "Blood Ring",
+      "level": 1,
+      "setGroup": "bloodreaver",
+      "slot": "ring",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.03
+      }
+    },
+    {
+      "id": 262,
+      "name": "Blood Ring",
+      "level": 2,
+      "setGroup": "bloodreaver",
+      "slot": "ring",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.05
+      }
+    },
+    {
+      "id": 263,
+      "name": "Blood Ring",
+      "level": 3,
+      "setGroup": "bloodreaver",
+      "slot": "ring",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.08
+      }
+    },
+    {
+      "id": 264,
+      "name": "Blood Ring",
+      "level": 4,
+      "setGroup": "bloodreaver",
+      "slot": "ring",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.12
+      }
+    },
+    {
+      "id": 271,
+      "name": "Blood Pendant",
+      "level": 1,
+      "setGroup": "bloodreaver",
+      "slot": "necklace",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 1,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 272,
+      "name": "Blood Pendant",
+      "level": 2,
+      "setGroup": "bloodreaver",
+      "slot": "necklace",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 2,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 273,
+      "name": "Blood Pendant",
+      "level": 3,
+      "setGroup": "bloodreaver",
+      "slot": "necklace",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 4,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 274,
+      "name": "Blood Pendant",
+      "level": 4,
+      "setGroup": "bloodreaver",
+      "slot": "necklace",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 6,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 281,
+      "name": "Blood Belt",
+      "level": 1,
+      "setGroup": "bloodreaver",
+      "slot": "belt",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 2,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 282,
+      "name": "Blood Belt",
+      "level": 2,
+      "setGroup": "bloodreaver",
+      "slot": "belt",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 4,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 283,
+      "name": "Blood Belt",
+      "level": 3,
+      "setGroup": "bloodreaver",
+      "slot": "belt",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 6,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 284,
+      "name": "Blood Belt",
+      "level": 4,
+      "setGroup": "bloodreaver",
+      "slot": "belt",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 10,
+        "armor": 0,
+        "damage": 0,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 291,
+      "name": "Blood Axe",
+      "level": 1,
+      "setGroup": "bloodreaver",
+      "slot": "hand",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 4,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 292,
+      "name": "Blood Axe",
+      "level": 2,
+      "setGroup": "bloodreaver",
+      "slot": "hand",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 6,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 293,
+      "name": "Blood Axe",
+      "level": 3,
+      "setGroup": "bloodreaver",
+      "slot": "hand",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 9,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 294,
+      "name": "Blood Axe",
+      "level": 4,
+      "setGroup": "bloodreaver",
+      "slot": "hand",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 14,
+        "speed": 0.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 301,
+      "name": "Blood Dagger",
+      "level": 1,
+      "setGroup": "bloodreaver",
+      "slot": "hand",
+      "rarity": "common",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 2,
+        "speed": 1.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 302,
+      "name": "Blood Dagger",
+      "level": 2,
+      "setGroup": "bloodreaver",
+      "slot": "hand",
+      "rarity": "uncommon",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 4,
+        "speed": 2.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 303,
+      "name": "Blood Dagger",
+      "level": 3,
+      "setGroup": "bloodreaver",
+      "slot": "hand",
+      "rarity": "rare",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 6,
+        "speed": 3.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    },
+    {
+      "id": 304,
+      "name": "Blood Dagger",
+      "level": 4,
+      "setGroup": "bloodreaver",
+      "slot": "hand",
+      "rarity": "epic",
+      "icon": null,
+      "stats": {
+        "hp": 0,
+        "armor": 0,
+        "damage": 10,
+        "speed": 5.0,
+        "thorns": 0,
+        "lifesteal": 0.0
+      }
+    }
+  ]
 }

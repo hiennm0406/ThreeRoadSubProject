@@ -21,11 +21,12 @@
         <div class="meta">
           <div class="name">{{ it.name }}</div>
           <div class="sub">
-            <span v-if="it.stats?.isActive">Active</span>
-            <span v-else>Passive</span>
+            <span class="setDot" :style="{ background: setColor(it.setGroup) }" />
+            <span>{{ setName(it.setGroup) }}</span>
             <span class="dot">•</span>
-            <span v-if="it.stats?.cooldownSeconds">{{ it.stats.cooldownSeconds }}s CD</span>
-            <span v-else>—</span>
+            <span>Lv{{ it.level }}</span>
+            <span class="dot">•</span>
+            <span>{{ slotLabel(it.slot) }}</span>
           </div>
         </div>
       </button>
@@ -38,6 +39,7 @@ export default {
   props: {
     items: { type: Array, required: true },
     selectedId: { type: Number, default: null },
+    setById: { type: Object, required: true },
   },
   emits: ['select'],
   methods: {
@@ -52,7 +54,18 @@ export default {
       if (r === 'legendary') return 'legendary'
       if (r === 'epic') return 'epic'
       if (r === 'rare') return 'rare'
+      if (r === 'uncommon') return 'uncommon'
       return 'common'
+    },
+    setName(id) {
+      return this.setById?.[id]?.name ?? id ?? '—'
+    },
+    setColor(id) {
+      return this.setById?.[id]?.color ?? '#64748b'
+    },
+    slotLabel(id) {
+      if (!id) return '—'
+      return id.charAt(0).toUpperCase() + id.slice(1)
     },
   },
 }
@@ -114,18 +127,11 @@ export default {
   overflow: hidden;
 }
 
-.icon.common {
-  background: rgba(148, 163, 184, 0.08);
-}
-.icon.rare {
-  background: rgba(96, 165, 250, 0.12);
-}
-.icon.epic {
-  background: rgba(167, 139, 250, 0.14);
-}
-.icon.legendary {
-  background: rgba(251, 191, 36, 0.14);
-}
+.icon.common { background: rgba(148, 163, 184, 0.08); }
+.icon.uncommon { background: rgba(52, 211, 153, 0.1); }
+.icon.rare { background: rgba(96, 165, 250, 0.12); }
+.icon.epic { background: rgba(167, 139, 250, 0.14); }
+.icon.legendary { background: rgba(251, 191, 36, 0.14); }
 
 .icon img {
   width: 100%;
@@ -152,10 +158,17 @@ export default {
   display: flex;
   gap: 6px;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.setDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  flex-shrink: 0;
 }
 
 .dot {
   opacity: 0.7;
 }
 </style>
-

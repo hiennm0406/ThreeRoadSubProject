@@ -2,11 +2,11 @@
   <aside class="filters card">
     <div class="filters__title">Filters</div>
 
-    <label class="filters__label">Name & text</label>
+    <label class="filters__label">Name & stats</label>
     <input
       class="input"
       :value="query"
-      placeholder="Use | for multiple terms (e.g. fire | sword)"
+      placeholder="Use | for multiple terms (e.g. sentinel | helm)"
       autocomplete="off"
       @input="$emit('update:query', $event.target.value.trim())"
     />
@@ -18,32 +18,33 @@
       <button class="btn" type="button" @click="$emit('clear')">Clear</button>
     </div>
 
-    <div class="filters__label">Tags</div>
-    <div class="tagGrid">
+    <div class="filters__label">Equipment Set</div>
+    <div class="setGrid">
       <button
-        v-for="t in allTags"
-        :key="t.id"
+        v-for="s in allSets"
+        :key="s.id"
         type="button"
-        class="tagPick"
-        :class="{ active: selectedTagIds.has(t.id) }"
-        :style="{ '--tag': t.color }"
-        @click="$emit('toggle-tag', t.id)"
+        class="setPick"
+        :class="{ active: selectedSetIds.has(s.id) }"
+        :style="{ '--set': s.color }"
+        @click="$emit('toggle-set', s.id)"
       >
-        {{ t.name }}
+        {{ s.name }}
       </button>
     </div>
 
-    <div v-if="allHeroes.length > 0" class="filters__label">Heroes</div>
-    <div v-if="allHeroes.length > 0" class="heroGrid">
+    <div class="filters__label">Slot</div>
+    <div class="tagGrid">
       <button
-        v-for="hero in allHeroes"
-        :key="hero"
+        v-for="s in allSlots"
+        :key="s.id"
         type="button"
-        class="heroPick"
-        :class="{ active: selectedHeroIds.has(hero) }"
-        @click="$emit('toggle-hero', hero)"
+        class="tagPick"
+        :class="{ active: selectedSlotIds.has(s.id) }"
+        :style="{ '--tag': slotColor(s.id) }"
+        @click="$emit('toggle-slot', s.id)"
       >
-        {{ hero }}
+        {{ s.name }}
       </button>
     </div>
 
@@ -54,21 +55,28 @@
 </template>
 
 <script>
+import { SLOT_COLORS } from './../../data/itemDb'
+
 export default {
   props: {
-    allTags: { type: Array, required: true },
-    allHeroes: { type: Array, default: () => [] },
+    allSets: { type: Array, required: true },
+    allSlots: { type: Array, required: true },
     query: { type: String, default: '' },
     matchMode: { type: String, default: 'any' },
-    selectedTagIds: { type: Object, required: true },
-    selectedHeroIds: { type: Object, default: () => new Set() },
+    selectedSetIds: { type: Object, required: true },
+    selectedSlotIds: { type: Object, required: true },
     filteredCount: { type: Number, required: true },
     totalCount: { type: Number, required: true },
   },
-  emits: ['update:query', 'toggle-match-mode', 'toggle-tag', 'toggle-hero', 'clear'],
+  emits: ['update:query', 'toggle-match-mode', 'toggle-set', 'toggle-slot', 'clear'],
   computed: {
     matchModeLabel() {
       return this.matchMode === 'all' ? 'Match All' : 'Match Any'
+    },
+  },
+  methods: {
+    slotColor(id) {
+      return SLOT_COLORS[id] ?? '#64748b'
     },
   },
 }
@@ -103,6 +111,29 @@ export default {
   color: var(--muted);
 }
 
+.setGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.setPick {
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--panel-2);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.setPick.active {
+  border-color: color-mix(in srgb, var(--set) 75%, var(--border));
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--set) 22%, transparent);
+  background: color-mix(in srgb, var(--set) 10%, var(--panel-2));
+}
+
 .tagGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -122,26 +153,5 @@ export default {
 .tagPick.active {
   border-color: color-mix(in srgb, var(--tag) 75%, var(--border));
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--tag) 22%, transparent);
-}
-
-.heroGrid {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.heroPick {
-  text-align: left;
-  padding: 8px 10px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: var(--panel-2);
-  color: var(--text);
-  cursor: pointer;
-}
-
-.heroPick.active {
-  border-color: color-mix(in srgb, var(--accent) 75%, var(--border));
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 22%, transparent);
 }
 </style>

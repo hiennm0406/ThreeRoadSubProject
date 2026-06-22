@@ -2,8 +2,8 @@
   <div class="app">
     <header class="topbar">
       <div class="brand">
-        <div class="brand__title">Item Database</div>
-        <div class="brand__sub">AutoBattleFantasy</div>
+        <div class="brand__title">Three Remain</div>
+        <div class="brand__sub">Equipment Database</div>
       </div>
 
       <nav class="nav">

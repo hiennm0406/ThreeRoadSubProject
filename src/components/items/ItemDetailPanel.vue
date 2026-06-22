@@ -4,18 +4,12 @@
       <div class="hero card">
         <div class="hero__main">
           <div class="name">{{ item.name }}</div>
-          <div class="metaLine">ID {{ item.id }}</div>
+          <div class="metaLine">ID {{ item.id }} · Lv{{ item.level }}</div>
 
           <div class="primaryBadges">
-            <span class="pill">{{ item.stats?.isActive ? 'Active' : 'Passive' }}</span>
-            <span class="pill pill--muted">CD {{ item.stats?.cooldownSeconds ? item.stats.cooldownSeconds + 's' : '-' }}</span>
-            <span class="pill pill--muted">Price {{ item.stats?.shopPrice ?? '-' }}</span>
-          </div>
-
-          <div class="tags">
-            <span v-for="t in item.tags ?? []" :key="t" class="tag" :style="{ '--tag': tagColor(t) }">
-              {{ tagName(t) }}
-            </span>
+            <span class="pill setPill" :style="{ '--set': setColor(item.setGroup) }">{{ setName(item.setGroup) }}</span>
+            <span class="pill pill--muted">{{ slotName(item.slot) }}</span>
+            <span class="pill pill--muted">{{ rarityLabel(item.rarity) }}</span>
           </div>
         </div>
 
@@ -26,26 +20,13 @@
       </div>
 
       <div class="section">
-        <div class="section__title">Effects</div>
-        <div v-if="(item.effects ?? []).length === 0" class="empty">No effects.</div>
-
-        <div v-else class="effects">
-          <div v-for="(e, idx) in item.effects" :key="idx" class="effect">
-            <div class="effect__meta">
-              <span class="pill">{{ e.trigger }}</span>
-              <span class="pill pill--muted">{{ e.type }}</span>
-            </div>
-            <div class="effect__text">{{ e.text }}</div>
-            <div v-if="(e.fields ?? []).length > 0" class="fieldList">
-              <span v-for="f in e.fields" :key="f.key + f.value" class="fieldChip"> {{ f.key }}: {{ f.value }} </span>
-            </div>
+        <div class="section__title">Stats</div>
+        <div v-if="statEntries.length === 0" class="empty">No bonus stats.</div>
+        <div v-else class="stats">
+          <div v-for="s in statEntries" :key="s.key" class="stat">
+            <div class="stat__k">{{ s.label }}</div>
+            <div class="stat__v">{{ s.value }}</div>
           </div>
-        </div>
-      </div>
-
-      <div v-if="(item.heroOwners ?? []).length > 0" class="section">
-        <div class="owners">
-          <span v-for="hero in item.heroOwners" :key="hero" class="ownerChip">{{ hero }}</span>
         </div>
       </div>
     </template>
@@ -58,7 +39,21 @@
 export default {
   props: {
     item: { type: Object, default: null },
-    tagById: { type: Object, required: true },
+    setById: { type: Object, required: true },
+    slotById: { type: Object, default: () => ({}) },
+  },
+  computed: {
+    statEntries() {
+      const stats = this.item?.stats ?? {}
+      const rows = []
+      if (stats.hp) rows.push({ key: 'hp', label: 'HP', value: `+${stats.hp}` })
+      if (stats.armor) rows.push({ key: 'armor', label: 'Armor', value: `+${stats.armor}` })
+      if (stats.damage) rows.push({ key: 'damage', label: 'Damage', value: `+${stats.damage}` })
+      if (stats.speed) rows.push({ key: 'speed', label: 'Speed', value: `+${stats.speed}` })
+      if (stats.thorns) rows.push({ key: 'thorns', label: 'Thorns', value: `+${stats.thorns}` })
+      if (stats.lifesteal) rows.push({ key: 'lifesteal', label: 'Lifesteal', value: `${Math.round(stats.lifesteal * 100)}%` })
+      return rows
+    },
   },
   methods: {
     initials(name) {
@@ -72,13 +67,21 @@ export default {
       if (r === 'legendary') return 'legendary'
       if (r === 'epic') return 'epic'
       if (r === 'rare') return 'rare'
+      if (r === 'uncommon') return 'uncommon'
       return 'common'
     },
-    tagName(id) {
-      return this.tagById?.[id]?.name ?? id
+    rarityLabel(rarity) {
+      if (!rarity) return '—'
+      return rarity.charAt(0).toUpperCase() + rarity.slice(1)
     },
-    tagColor(id) {
-      return this.tagById?.[id]?.color ?? 'rgba(148,163,184,0.35)'
+    setName(id) {
+      return this.setById?.[id]?.name ?? (id === 'none' ? 'No Set' : id)
+    },
+    setColor(id) {
+      return this.setById?.[id]?.color ?? '#64748b'
+    },
+    slotName(id) {
+      return this.slotById?.[id]?.name ?? id ?? '—'
     },
   },
 }
@@ -110,18 +113,11 @@ export default {
   overflow: hidden;
 }
 
-.icon.common {
-  background: rgba(148, 163, 184, 0.08);
-}
-.icon.rare {
-  background: rgba(96, 165, 250, 0.12);
-}
-.icon.epic {
-  background: rgba(167, 139, 250, 0.14);
-}
-.icon.legendary {
-  background: rgba(251, 191, 36, 0.14);
-}
+.icon.common { background: rgba(148, 163, 184, 0.08); }
+.icon.uncommon { background: rgba(52, 211, 153, 0.1); }
+.icon.rare { background: rgba(96, 165, 250, 0.12); }
+.icon.epic { background: rgba(167, 139, 250, 0.14); }
+.icon.legendary { background: rgba(251, 191, 36, 0.14); }
 
 .icon img {
   width: 100%;
@@ -159,28 +155,27 @@ export default {
   margin-bottom: 8px;
 }
 
-.tags {
-  margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+.pill {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
 }
 
-.tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--tag) 50%, var(--border));
-  background: color-mix(in srgb, var(--tag) 14%, var(--panel));
-  color: var(--text);
-  font-size: 12px;
+.setPill {
+  border-color: color-mix(in srgb, var(--set) 60%, var(--border));
+  background: color-mix(in srgb, var(--set) 12%, var(--panel));
+}
+
+.pill--muted {
+  color: var(--muted);
 }
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
 }
 
@@ -201,70 +196,6 @@ export default {
   font-weight: 800;
 }
 
-.effects {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.effect {
-  border: 1px solid var(--border);
-  background: var(--panel-2);
-  border-radius: 12px;
-  padding: 10px;
-}
-
-.effect__meta {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 8px;
-}
-
-.pill {
-  font-size: 11px;
-  padding: 4px 8px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--panel);
-  color: var(--text);
-}
-
-.pill--muted {
-  color: var(--muted);
-}
-
-.effect__text {
-  line-height: 1.35;
-}
-
-.fieldList {
-  margin-top: 8px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.fieldChip {
-  font-size: 11px;
-  padding: 4px 8px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  color: var(--muted);
-}
-
-.owners {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.ownerChip {
-  padding: 6px 10px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: var(--panel-2);
-}
-
 .empty {
   color: var(--muted);
   font-size: 13px;
@@ -276,4 +207,3 @@ export default {
   }
 }
 </style>
-

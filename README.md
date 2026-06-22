@@ -1,7 +1,26 @@
-# Vue 3 + Vite App on Netlify
+# Three Remain — Equipment Database Viewer
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Web tool tra cứu trang bị cho **Three Remain**. Deploy qua Netlify (cấu hình giữ nguyên — cùng URL host cũ).
 
-## Recommended IDE Setup
+## Export data từ Unity
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+Menu: **`(=^･ω･^=) / Export Item DB to Web (Three Remain)`**
+
+Ghi file: `subProject/src/data/items.generated.json`
+
+## Chạy local
+
+```bash
+npm ci
+npm run dev
+```
+
+## Deploy
+
+`npm ci && vite build` → `dist/` (xem `netlify.toml`)
+
+## Lọc
+
+- Equipment Set: Sentinel / Thornlord / Bloodreaver
+- Slot: Hat, Body, Hand, …
+- Tìm kiếm text (`|` = OR)
