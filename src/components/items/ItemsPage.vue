@@ -30,28 +30,28 @@
 import ItemGrid from './ItemGrid.vue'
 import ItemDetailPanel from './ItemDetailPanel.vue'
 import ItemFilters from './ItemFilters.vue'
-import { filterItems, loadItemDatabase } from './../../data/itemDb'
+import { filterGroupedItems, loadItemDatabase } from './../../data/itemDb'
 
 export default {
   components: { ItemGrid, ItemDetailPanel, ItemFilters },
   data() {
-    const { sets, setById, slots, slotById, items } = loadItemDatabase()
+    const { sets, setById, slots, slotById, groupedItems } = loadItemDatabase()
     return {
       sets,
       setById,
       slots,
       slotById,
-      items,
+      items: groupedItems,
       query: '',
       matchMode: 'any',
       selectedSets: new Set(),
       selectedSlots: new Set(),
-      selectedId: items[0]?.id ?? null,
+      selectedId: groupedItems[0]?.familyId ?? null,
     }
   },
   computed: {
     filteredItems() {
-      return filterItems(this.items, {
+      return filterGroupedItems(this.items, {
         query: this.query,
         selectedSets: this.selectedSets,
         selectedSlots: this.selectedSlots,
@@ -59,7 +59,7 @@ export default {
       })
     },
     selectedItem() {
-      return this.items.find((x) => x.id === this.selectedId) ?? null
+      return this.items.find((x) => (x.familyId ?? x.id) === this.selectedId) ?? null
     },
   },
   watch: {
@@ -68,8 +68,8 @@ export default {
         this.selectedId = null
         return
       }
-      if (!list.some((x) => x.id === this.selectedId)) {
-        this.selectedId = list[0].id
+      if (!list.some((x) => (x.familyId ?? x.id) === this.selectedId)) {
+        this.selectedId = list[0].familyId ?? list[0].id
       }
     },
   },

@@ -13,6 +13,102 @@ export const SLOT_COLORS = {
 }
 
 const DEFAULT_SET_COLOR = '#64748b'
+export const MAX_ITEM_LEVEL = 4
+export const STAT_KEYS = ['hp', 'armor', 'damage', 'speed', 'thorns', 'lifesteal']
+
+const STAT_LABELS = {
+  hp: 'HP',
+  armor: 'Armor',
+  damage: 'Damage',
+  speed: 'Speed',
+  thorns: 'Thorns',
+  lifesteal: 'Lifesteal',
+}
+
+export function getFamilyId(item) {
+  return item.id - item.level + 1
+}
+
+export function buildStatsByLevel(levels, maxLevel = MAX_ITEM_LEVEL) {
+  const byLevel = Object.fromEntries(levels.map((l) => [l.level, l.stats ?? {}]))
+  const result = {}
+  for (const key of STAT_KEYS) {
+    result[key] = Array.from({ length: maxLevel }, (_, i) => {
+      const v = byLevel[i + 1]?.[key]
+      return v == null ? 0 : v
+    })
+  }
+  return result
+}
+
+export function formatStatLevels(values, key) {
+  if (key === 'lifesteal') {
+    return values.map((v) => Math.round((Number(v) || 0) * 100)).join('/')
+  }
+  return values.map((v) => {
+    const n = Number(v) || 0
+    return Number.isInteger(n) ? n : n
+  }).join('/')
+}
+
+export function groupItems(items) {
+  const map = new Map()
+  for (const it of items) {
+    const familyId = getFamilyId(it)
+    let group = map.get(familyId)
+    if (!group) {
+      group = {
+        familyId,
+        id: familyId,
+        name: it.name,
+        setGroup: it.setGroup,
+        slot: it.slot,
+        icon: it.icon ?? null,
+        levels: [],
+      }
+      map.set(familyId, group)
+    }
+    group.levels.push(it)
+    if (it.icon) group.icon = it.icon
+  }
+
+  for (const group of map.values()) {
+    group.levels.sort((a, b) => a.level - b.level)
+    group.maxLevel = Math.max(...group.levels.map((l) => l.level), 1)
+    group.rarity = group.levels[group.levels.length - 1]?.rarity ?? 'common'
+    group.levelIds = group.levels.map((l) => l.id)
+    group.statsByLevel = buildStatsByLevel(group.levels)
+  }
+
+  return Array.from(map.values()).sort((a, b) => a.familyId - b.familyId)
+}
+
+export function groupedStatEntries(statsByLevel) {
+  if (!statsByLevel) return []
+  return STAT_KEYS.filter((key) => statsByLevel[key]?.some((v) => Number(v) !== 0))
+    .map((key) => ({
+      key,
+      label: STAT_LABELS[key],
+      value: formatStatLevels(statsByLevel[key], key) + (key === 'lifesteal' ? '%' : ''),
+    }))
+}
+
+export function groupedSearchText(item) {
+  const statText = groupedStatEntries(item.statsByLevel)
+    .map((s) => `${s.label} ${s.value}`)
+    .join(' ')
+  return [
+    item.name,
+    item.setGroup,
+    item.slot,
+    item.rarity,
+    `id ${item.familyId}`,
+    item.levelIds?.map((id) => `id ${id}`).join(' '),
+    statText,
+  ]
+    .map(normalize)
+    .join(' ')
+}
 
 export function normalize(s) {
   return String(s ?? '').toLowerCase()
@@ -47,6 +143,7 @@ export function loadItemDatabase() {
     ...it,
     stats: it.stats ?? {},
   }))
+  const groupedItems = groupItems(items)
   const heroes = db.heroes ?? []
   const setById = Object.fromEntries(sets.map((s) => [s.id, s]))
   const slotById = Object.fromEntries(slots.map((s) => [s.id, s]))
@@ -58,6 +155,7 @@ export function loadItemDatabase() {
     slots,
     slotById,
     items,
+    groupedItems,
     heroes,
   }
 }
@@ -89,7 +187,7 @@ export function filterItems(
     }
 
     if (terms.length > 0) {
-      const hay = [
+      const hay = it.statsByLevel != null ? groupedSearchText(it) : [
         it.name,
         it.setGroup,
         it.slot,
@@ -106,4 +204,8 @@ export function filterItems(
 
     return true
   })
+}
+
+export function filterGroupedItems(groupedItems, options) {
+  return filterItems(groupedItems, options)
 }

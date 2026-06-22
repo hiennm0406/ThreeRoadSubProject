@@ -4,7 +4,7 @@
       <div class="hero card">
         <div class="hero__main">
           <div class="name">{{ item.name }}</div>
-          <div class="metaLine">ID {{ item.id }} · Lv{{ item.level }}</div>
+          <div class="metaLine">{{ metaLine }}</div>
 
           <div class="primaryBadges">
             <span class="pill setPill" :style="{ '--set': setColor(item.setGroup) }">{{ setName(item.setGroup) }}</span>
@@ -20,7 +20,7 @@
       </div>
 
       <div class="section">
-        <div class="section__title">Stats</div>
+        <div class="section__title">Stats <span v-if="item.statsByLevel" class="section__hint">(Lv1 / Lv2 / Lv3 / Lv4)</span></div>
         <div v-if="statEntries.length === 0" class="empty">No bonus stats.</div>
         <div v-else class="stats">
           <div v-for="s in statEntries" :key="s.key" class="stat">
@@ -36,6 +36,8 @@
 </template>
 
 <script>
+import { groupedStatEntries } from './../../data/itemDb'
+
 export default {
   props: {
     item: { type: Object, default: null },
@@ -44,6 +46,9 @@ export default {
   },
   computed: {
     statEntries() {
+      if (this.item?.statsByLevel) {
+        return groupedStatEntries(this.item.statsByLevel)
+      }
       const stats = this.item?.stats ?? {}
       const rows = []
       if (stats.hp) rows.push({ key: 'hp', label: 'HP', value: `+${stats.hp}` })
@@ -53,6 +58,15 @@ export default {
       if (stats.thorns) rows.push({ key: 'thorns', label: 'Thorns', value: `+${stats.thorns}` })
       if (stats.lifesteal) rows.push({ key: 'lifesteal', label: 'Lifesteal', value: `${Math.round(stats.lifesteal * 100)}%` })
       return rows
+    },
+    metaLine() {
+      if (!this.item) return ''
+      if (this.item.levelIds?.length > 1) {
+        const ids = this.item.levelIds.join(' · ')
+        return `ID ${ids} · Lv1–${this.item.maxLevel ?? 4}`
+      }
+      const id = this.item.familyId ?? this.item.id
+      return this.item.level != null ? `ID ${id} · Lv${this.item.level}` : `ID ${id}`
     },
   },
   methods: {
@@ -153,6 +167,12 @@ export default {
 .section__title {
   font-weight: 700;
   margin-bottom: 8px;
+}
+
+.section__hint {
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--muted);
 }
 
 .pill {

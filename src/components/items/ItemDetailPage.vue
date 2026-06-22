@@ -27,7 +27,7 @@
           <span v-if="hasMore"> — cuộn xuống để tải thêm</span>
         </p>
 
-        <article v-for="it in visibleItems" :key="it.id" class="listRow card">
+        <article v-for="it in visibleItems" :key="it.familyId ?? it.id" class="listRow card">
           <ItemDetailPanel :item="it" :set-by-id="setById" :slot-by-id="slotById" />
         </article>
 
@@ -45,7 +45,7 @@
 <script>
 import ItemFilters from './ItemFilters.vue'
 import ItemDetailPanel from './ItemDetailPanel.vue'
-import { filterItems, loadItemDatabase } from './../../data/itemDb'
+import { filterGroupedItems, loadItemDatabase } from './../../data/itemDb'
 
 const INITIAL_VISIBLE = 12
 const LOAD_BATCH = 12
@@ -53,13 +53,13 @@ const LOAD_BATCH = 12
 export default {
   components: { ItemFilters, ItemDetailPanel },
   data() {
-    const { sets, setById, slots, slotById, items } = loadItemDatabase()
+    const { sets, setById, slots, slotById, groupedItems } = loadItemDatabase()
     return {
       sets,
       setById,
       slots,
       slotById,
-      items,
+      items: groupedItems,
       query: '',
       matchMode: 'any',
       selectedSets: new Set(),
@@ -70,7 +70,7 @@ export default {
   },
   computed: {
     filteredItems() {
-      return filterItems(this.items, {
+      return filterGroupedItems(this.items, {
         query: this.query,
         selectedSets: this.selectedSets,
         selectedSlots: this.selectedSlots,

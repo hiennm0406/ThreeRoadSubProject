@@ -7,10 +7,10 @@
     <div class="grid">
       <button
         v-for="it in items"
-        :key="it.id"
+        :key="it.familyId ?? it.id"
         class="card itemCard"
-        :class="{ active: it.id === selectedId }"
-        @click="$emit('select', it.id)"
+        :class="{ active: (it.familyId ?? it.id) === selectedId }"
+        @click="$emit('select', it.familyId ?? it.id)"
         type="button"
       >
         <div class="icon" :class="rarityClass(it.rarity)">
@@ -24,7 +24,7 @@
             <span class="setDot" :style="{ background: setColor(it.setGroup) }" />
             <span>{{ setName(it.setGroup) }}</span>
             <span class="dot">•</span>
-            <span>Lv{{ it.level }}</span>
+            <span>Lv1–{{ it.maxLevel ?? 4 }}</span>
             <span class="dot">•</span>
             <span>{{ slotLabel(it.slot) }}</span>
           </div>
