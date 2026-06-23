@@ -1,18 +1,18 @@
 <template>
   <div class="itemsPage">
     <ItemFilters
-      :all-tags="allTags"
-      :all-heroes="allHeroes"
+      :all-sets="allSets"
+      :all-slots="allSlots"
       :query="query"
       :match-mode="matchMode"
-      :selected-tag-ids="selectedTags"
-      :selected-hero-ids="selectedHeroes"
+      :selected-set-ids="selectedSets"
+      :selected-slot-ids="selectedSlots"
       :filtered-count="filteredItems.length"
       :total-count="items.length"
       @update:query="query = $event"
       @toggle-match-mode="toggleMatchMode"
-      @toggle-tag="toggleTag"
-      @toggle-hero="toggleHero"
+      @toggle-set="toggleSet"
+      @toggle-slot="toggleSlot"
       @clear="clearAll"
     />
 
@@ -35,17 +35,17 @@ import { filterItems, loadItemDatabase } from './../../data/itemDb'
 export default {
   components: { ItemGrid, ItemDetailPanel, ItemFilters },
   data() {
-    const { tags, tagById, items, heroes, setBonuses } = loadItemDatabase()
+    const { tagById, items, setBonuses, sets, slots } = loadItemDatabase()
     return {
-      allTags: tags,
-      allHeroes: heroes,
+      allSets: sets,
+      allSlots: slots,
       tagById,
       setBonuses,
       items,
       query: '',
       matchMode: 'any',
-      selectedTags: new Set(),
-      selectedHeroes: new Set(),
+      selectedSets: new Set(),
+      selectedSlots: new Set(),
       selectedId: items[0]?.id ?? null,
     }
   },
@@ -53,8 +53,8 @@ export default {
     filteredItems() {
       return filterItems(this.items, {
         query: this.query,
-        selectedTags: this.selectedTags,
-        selectedHeroes: this.selectedHeroes,
+        selectedSets: this.selectedSets,
+        selectedSlots: this.selectedSlots,
         matchMode: this.matchMode,
       })
     },
@@ -77,20 +77,20 @@ export default {
     toggleMatchMode() {
       this.matchMode = this.matchMode === 'all' ? 'any' : 'all'
     },
-    toggleTag(id) {
-      if (this.selectedTags.has(id)) this.selectedTags.delete(id)
-      else this.selectedTags.add(id)
-      this.selectedTags = new Set(this.selectedTags)
+    toggleSet(id) {
+      if (this.selectedSets.has(id)) this.selectedSets.delete(id)
+      else this.selectedSets.add(id)
+      this.selectedSets = new Set(this.selectedSets)
     },
-    toggleHero(name) {
-      if (this.selectedHeroes.has(name)) this.selectedHeroes.delete(name)
-      else this.selectedHeroes.add(name)
-      this.selectedHeroes = new Set(this.selectedHeroes)
+    toggleSlot(id) {
+      if (this.selectedSlots.has(id)) this.selectedSlots.delete(id)
+      else this.selectedSlots.add(id)
+      this.selectedSlots = new Set(this.selectedSlots)
     },
     clearAll() {
       this.query = ''
-      this.selectedTags = new Set()
-      this.selectedHeroes = new Set()
+      this.selectedSets = new Set()
+      this.selectedSlots = new Set()
     },
     onSelect(id) {
       this.selectedId = id

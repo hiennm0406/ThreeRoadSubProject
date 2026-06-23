@@ -55,8 +55,6 @@
 </template>
 
 <script>
-import { SLOT_COLORS } from './../../data/itemDb'
-
 export default {
   props: {
     allSets: { type: Array, required: true },
@@ -76,7 +74,7 @@ export default {
   },
   methods: {
     slotColor(id) {
-      return SLOT_COLORS[id] ?? '#64748b'
+      return this.allSlots.find((s) => s.id === id)?.color ?? '#64748b'
     },
   },
 }

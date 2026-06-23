@@ -105,14 +105,39 @@ export function loadItemDatabase() {
 
 export function filterItems(
   items,
-  { query = '', selectedTags = [], selectedHeroes = [], matchMode = 'any' },
+  {
+    query = '',
+    selectedTags = [],
+    selectedSets = [],
+    selectedSlots = [],
+    selectedHeroes = [],
+    matchMode = 'any',
+  },
 ) {
   const terms = buildTerms(query)
   const needTags = Array.isArray(selectedTags) ? selectedTags : Array.from(selectedTags)
+  const needSets = Array.isArray(selectedSets) ? selectedSets : Array.from(selectedSets)
+  const needSlots = Array.isArray(selectedSlots) ? selectedSlots : Array.from(selectedSlots)
   const needHeroes = Array.isArray(selectedHeroes) ? selectedHeroes : Array.from(selectedHeroes)
   const mode = matchMode
 
   return items.filter((it) => {
+    if (needSets.length > 0) {
+      const ok =
+        mode === 'all'
+          ? needSets.every((s) => it.setGroup === s)
+          : needSets.some((s) => it.setGroup === s)
+      if (!ok) return false
+    }
+
+    if (needSlots.length > 0) {
+      const ok =
+        mode === 'all'
+          ? needSlots.every((s) => it.slot === s)
+          : needSlots.some((s) => it.slot === s)
+      if (!ok) return false
+    }
+
     if (needTags.length > 0) {
       const tags = it.tags ?? []
       const ok =
