@@ -1,2117 +1,2130 @@
 {
-  "game": "Three Remain",
-  "version": 1,
-  "exportedAt": "2026-06-22T16:22:32.1469533Z",
-  "sets": [
-    {
-      "id": "sentinel",
-      "name": "Sentinel",
-      "color": "#60a5fa"
-    },
-    {
-      "id": "thornlord",
-      "name": "Thornlord",
-      "color": "#84cc16"
-    },
-    {
-      "id": "bloodreaver",
-      "name": "Bloodreaver",
-      "color": "#f43f5e"
-    }
-  ],
-  "slots": [
-    {
-      "id": "hat",
-      "name": "Hat"
-    },
-    {
-      "id": "body",
-      "name": "Body"
-    },
-    {
-      "id": "shoes",
-      "name": "Shoes"
-    },
-    {
-      "id": "gloves",
-      "name": "Gloves"
-    },
-    {
-      "id": "cloak",
-      "name": "Cloak"
-    },
-    {
-      "id": "ring",
-      "name": "Ring"
-    },
-    {
-      "id": "necklace",
-      "name": "Necklace"
-    },
-    {
-      "id": "hand",
-      "name": "Hand"
-    },
-    {
-      "id": "belt",
-      "name": "Belt"
-    }
-  ],
-  "heroes": [
-    {
-      "id": 1,
-      "name": "Knight",
-      "icon": null,
-      "baseStat": {
-        "hp": 1200,
-        "armor": 80,
-        "damage": 100,
-        "speed": 1.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    }
-  ],
-  "items": [
-    {
-      "id": 11,
-      "name": "Sentinel Helm",
-      "level": 1,
-      "setGroup": "sentinel",
-      "slot": "hat",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 3,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 12,
-      "name": "Sentinel Helm",
-      "level": 2,
-      "setGroup": "sentinel",
-      "slot": "hat",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 5,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 13,
-      "name": "Sentinel Helm",
-      "level": 3,
-      "setGroup": "sentinel",
-      "slot": "hat",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 8,
-        "armor": 1,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 14,
-      "name": "Sentinel Helm",
-      "level": 4,
-      "setGroup": "sentinel",
-      "slot": "hat",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 13,
-        "armor": 2,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 21,
-      "name": "Sentinel Armor",
-      "level": 1,
-      "setGroup": "sentinel",
-      "slot": "body",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 5,
-        "armor": 1,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 22,
-      "name": "Sentinel Armor",
-      "level": 2,
-      "setGroup": "sentinel",
-      "slot": "body",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 8,
-        "armor": 2,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 23,
-      "name": "Sentinel Armor",
-      "level": 3,
-      "setGroup": "sentinel",
-      "slot": "body",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 12,
-        "armor": 3,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 24,
-      "name": "Sentinel Armor",
-      "level": 4,
-      "setGroup": "sentinel",
-      "slot": "body",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 18,
-        "armor": 5,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 31,
-      "name": "Sentinel Boots",
-      "level": 1,
-      "setGroup": "sentinel",
-      "slot": "shoes",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 2,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 32,
-      "name": "Sentinel Boots",
-      "level": 2,
-      "setGroup": "sentinel",
-      "slot": "shoes",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 4,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 33,
-      "name": "Sentinel Boots",
-      "level": 3,
-      "setGroup": "sentinel",
-      "slot": "shoes",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 6,
-        "armor": 0,
-        "damage": 0,
-        "speed": 1.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 34,
-      "name": "Sentinel Boots",
-      "level": 4,
-      "setGroup": "sentinel",
-      "slot": "shoes",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 10,
-        "armor": 0,
-        "damage": 0,
-        "speed": 2.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 41,
-      "name": "Sentinel Gauntlets",
-      "level": 1,
-      "setGroup": "sentinel",
-      "slot": "gloves",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 1,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 42,
-      "name": "Sentinel Gauntlets",
-      "level": 2,
-      "setGroup": "sentinel",
-      "slot": "gloves",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 2,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 43,
-      "name": "Sentinel Gauntlets",
-      "level": 3,
-      "setGroup": "sentinel",
-      "slot": "gloves",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 3,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 44,
-      "name": "Sentinel Gauntlets",
-      "level": 4,
-      "setGroup": "sentinel",
-      "slot": "gloves",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 5,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 51,
-      "name": "Sentinel Cloak",
-      "level": 1,
-      "setGroup": "sentinel",
-      "slot": "cloak",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 3,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 52,
-      "name": "Sentinel Cloak",
-      "level": 2,
-      "setGroup": "sentinel",
-      "slot": "cloak",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 5,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 53,
-      "name": "Sentinel Cloak",
-      "level": 3,
-      "setGroup": "sentinel",
-      "slot": "cloak",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 8,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 54,
-      "name": "Sentinel Cloak",
-      "level": 4,
-      "setGroup": "sentinel",
-      "slot": "cloak",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 13,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 61,
-      "name": "Sentinel Ring",
-      "level": 1,
-      "setGroup": "sentinel",
-      "slot": "ring",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 2,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 62,
-      "name": "Sentinel Ring",
-      "level": 2,
-      "setGroup": "sentinel",
-      "slot": "ring",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 4,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 63,
-      "name": "Sentinel Ring",
-      "level": 3,
-      "setGroup": "sentinel",
-      "slot": "ring",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 6,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 64,
-      "name": "Sentinel Ring",
-      "level": 4,
-      "setGroup": "sentinel",
-      "slot": "ring",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 10,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 71,
-      "name": "Sentinel Pendant",
-      "level": 1,
-      "setGroup": "sentinel",
-      "slot": "necklace",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 3,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 72,
-      "name": "Sentinel Pendant",
-      "level": 2,
-      "setGroup": "sentinel",
-      "slot": "necklace",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 5,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 73,
-      "name": "Sentinel Pendant",
-      "level": 3,
-      "setGroup": "sentinel",
-      "slot": "necklace",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 8,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 74,
-      "name": "Sentinel Pendant",
-      "level": 4,
-      "setGroup": "sentinel",
-      "slot": "necklace",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 13,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 81,
-      "name": "Sentinel Belt",
-      "level": 1,
-      "setGroup": "sentinel",
-      "slot": "belt",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 2,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 82,
-      "name": "Sentinel Belt",
-      "level": 2,
-      "setGroup": "sentinel",
-      "slot": "belt",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 4,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 83,
-      "name": "Sentinel Belt",
-      "level": 3,
-      "setGroup": "sentinel",
-      "slot": "belt",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 6,
-        "armor": 1,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 84,
-      "name": "Sentinel Belt",
-      "level": 4,
-      "setGroup": "sentinel",
-      "slot": "belt",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 10,
-        "armor": 2,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 91,
-      "name": "Sentinel Greatsword",
-      "level": 1,
-      "setGroup": "sentinel",
-      "slot": "hand",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 3,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 92,
-      "name": "Sentinel Greatsword",
-      "level": 2,
-      "setGroup": "sentinel",
-      "slot": "hand",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 5,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 93,
-      "name": "Sentinel Greatsword",
-      "level": 3,
-      "setGroup": "sentinel",
-      "slot": "hand",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 8,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 94,
-      "name": "Sentinel Greatsword",
-      "level": 4,
-      "setGroup": "sentinel",
-      "slot": "hand",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 13,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 101,
-      "name": "Sentinel Shield",
-      "level": 1,
-      "setGroup": "sentinel",
-      "slot": "hand",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 1,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 102,
-      "name": "Sentinel Shield",
-      "level": 2,
-      "setGroup": "sentinel",
-      "slot": "hand",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 2,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 103,
-      "name": "Sentinel Shield",
-      "level": 3,
-      "setGroup": "sentinel",
-      "slot": "hand",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 3,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 104,
-      "name": "Sentinel Shield",
-      "level": 4,
-      "setGroup": "sentinel",
-      "slot": "hand",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 5,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 111,
-      "name": "Thorn Crown",
-      "level": 1,
-      "setGroup": "thornlord",
-      "slot": "hat",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 2,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 112,
-      "name": "Thorn Crown",
-      "level": 2,
-      "setGroup": "thornlord",
-      "slot": "hat",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 4,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 113,
-      "name": "Thorn Crown",
-      "level": 3,
-      "setGroup": "thornlord",
-      "slot": "hat",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 6,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 114,
-      "name": "Thorn Crown",
-      "level": 4,
-      "setGroup": "thornlord",
-      "slot": "hat",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 13,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 121,
-      "name": "Thorn Mail",
-      "level": 1,
-      "setGroup": "thornlord",
-      "slot": "body",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 4,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 122,
-      "name": "Thorn Mail",
-      "level": 2,
-      "setGroup": "thornlord",
-      "slot": "body",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 6,
-        "armor": 1,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 123,
-      "name": "Thorn Mail",
-      "level": 3,
-      "setGroup": "thornlord",
-      "slot": "body",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 10,
-        "armor": 2,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 124,
-      "name": "Thorn Mail",
-      "level": 4,
-      "setGroup": "thornlord",
-      "slot": "body",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 16,
-        "armor": 4,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 131,
-      "name": "Thorn Walkers",
-      "level": 1,
-      "setGroup": "thornlord",
-      "slot": "shoes",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 2,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 132,
-      "name": "Thorn Walkers",
-      "level": 2,
-      "setGroup": "thornlord",
-      "slot": "shoes",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 4,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 133,
-      "name": "Thorn Walkers",
-      "level": 3,
-      "setGroup": "thornlord",
-      "slot": "shoes",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 6,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 134,
-      "name": "Thorn Walkers",
-      "level": 4,
-      "setGroup": "thornlord",
-      "slot": "shoes",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 10,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 141,
-      "name": "Thorn Claws",
-      "level": 1,
-      "setGroup": "thornlord",
-      "slot": "gloves",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 1,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 142,
-      "name": "Thorn Claws",
-      "level": 2,
-      "setGroup": "thornlord",
-      "slot": "gloves",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 2,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 143,
-      "name": "Thorn Claws",
-      "level": 3,
-      "setGroup": "thornlord",
-      "slot": "gloves",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 4,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 144,
-      "name": "Thorn Claws",
-      "level": 4,
-      "setGroup": "thornlord",
-      "slot": "gloves",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 6,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 151,
-      "name": "Thorn Mantle",
-      "level": 1,
-      "setGroup": "thornlord",
-      "slot": "cloak",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 2,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 152,
-      "name": "Thorn Mantle",
-      "level": 2,
-      "setGroup": "thornlord",
-      "slot": "cloak",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 4,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 153,
-      "name": "Thorn Mantle",
-      "level": 3,
-      "setGroup": "thornlord",
-      "slot": "cloak",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 6,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 154,
-      "name": "Thorn Mantle",
-      "level": 4,
-      "setGroup": "thornlord",
-      "slot": "cloak",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 10,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 161,
-      "name": "Thorn Ring",
-      "level": 1,
-      "setGroup": "thornlord",
-      "slot": "ring",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 1,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 162,
-      "name": "Thorn Ring",
-      "level": 2,
-      "setGroup": "thornlord",
-      "slot": "ring",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 2,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 163,
-      "name": "Thorn Ring",
-      "level": 3,
-      "setGroup": "thornlord",
-      "slot": "ring",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 3,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 164,
-      "name": "Thorn Ring",
-      "level": 4,
-      "setGroup": "thornlord",
-      "slot": "ring",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 5,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 171,
-      "name": "Thorn Necklace",
-      "level": 1,
-      "setGroup": "thornlord",
-      "slot": "necklace",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 2,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 172,
-      "name": "Thorn Necklace",
-      "level": 2,
-      "setGroup": "thornlord",
-      "slot": "necklace",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 4,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 173,
-      "name": "Thorn Necklace",
-      "level": 3,
-      "setGroup": "thornlord",
-      "slot": "necklace",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 6,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 174,
-      "name": "Thorn Necklace",
-      "level": 4,
-      "setGroup": "thornlord",
-      "slot": "necklace",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 10,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 181,
-      "name": "Thorn Belt",
-      "level": 1,
-      "setGroup": "thornlord",
-      "slot": "belt",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 2,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 182,
-      "name": "Thorn Belt",
-      "level": 2,
-      "setGroup": "thornlord",
-      "slot": "belt",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 4,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 183,
-      "name": "Thorn Belt",
-      "level": 3,
-      "setGroup": "thornlord",
-      "slot": "belt",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 6,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 184,
-      "name": "Thorn Belt",
-      "level": 4,
-      "setGroup": "thornlord",
-      "slot": "belt",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 10,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 191,
-      "name": "Thorn Hammer",
-      "level": 1,
-      "setGroup": "thornlord",
-      "slot": "hand",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 3,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 192,
-      "name": "Thorn Hammer",
-      "level": 2,
-      "setGroup": "thornlord",
-      "slot": "hand",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 5,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 193,
-      "name": "Thorn Hammer",
-      "level": 3,
-      "setGroup": "thornlord",
-      "slot": "hand",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 8,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 194,
-      "name": "Thorn Hammer",
-      "level": 4,
-      "setGroup": "thornlord",
-      "slot": "hand",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 13,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 201,
-      "name": "Thorn Shield",
-      "level": 1,
-      "setGroup": "thornlord",
-      "slot": "hand",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 1,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 202,
-      "name": "Thorn Shield",
-      "level": 2,
-      "setGroup": "thornlord",
-      "slot": "hand",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 2,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 203,
-      "name": "Thorn Shield",
-      "level": 3,
-      "setGroup": "thornlord",
-      "slot": "hand",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 3,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 204,
-      "name": "Thorn Shield",
-      "level": 4,
-      "setGroup": "thornlord",
-      "slot": "hand",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 5,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 211,
-      "name": "Blood Hood",
-      "level": 1,
-      "setGroup": "bloodreaver",
-      "slot": "hat",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 2,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 212,
-      "name": "Blood Hood",
-      "level": 2,
-      "setGroup": "bloodreaver",
-      "slot": "hat",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 4,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 213,
-      "name": "Blood Hood",
-      "level": 3,
-      "setGroup": "bloodreaver",
-      "slot": "hat",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 6,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 214,
-      "name": "Blood Hood",
-      "level": 4,
-      "setGroup": "bloodreaver",
-      "slot": "hat",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 10,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 221,
-      "name": "Blood Armor",
-      "level": 1,
-      "setGroup": "bloodreaver",
-      "slot": "body",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 4,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 222,
-      "name": "Blood Armor",
-      "level": 2,
-      "setGroup": "bloodreaver",
-      "slot": "body",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 7,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 223,
-      "name": "Blood Armor",
-      "level": 3,
-      "setGroup": "bloodreaver",
-      "slot": "body",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 10,
-        "armor": 1,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 224,
-      "name": "Blood Armor",
-      "level": 4,
-      "setGroup": "bloodreaver",
-      "slot": "body",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 16,
-        "armor": 2,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 231,
-      "name": "Blood Boots",
-      "level": 1,
-      "setGroup": "bloodreaver",
-      "slot": "shoes",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 0,
-        "speed": 1.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 232,
-      "name": "Blood Boots",
-      "level": 2,
-      "setGroup": "bloodreaver",
-      "slot": "shoes",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 0,
-        "speed": 2.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 233,
-      "name": "Blood Boots",
-      "level": 3,
-      "setGroup": "bloodreaver",
-      "slot": "shoes",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 0,
-        "speed": 3.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 234,
-      "name": "Blood Boots",
-      "level": 4,
-      "setGroup": "bloodreaver",
-      "slot": "shoes",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 0,
-        "speed": 5.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 241,
-      "name": "Blood Gloves",
-      "level": 1,
-      "setGroup": "bloodreaver",
-      "slot": "gloves",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 1,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 242,
-      "name": "Blood Gloves",
-      "level": 2,
-      "setGroup": "bloodreaver",
-      "slot": "gloves",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 2,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 243,
-      "name": "Blood Gloves",
-      "level": 3,
-      "setGroup": "bloodreaver",
-      "slot": "gloves",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 4,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 244,
-      "name": "Blood Gloves",
-      "level": 4,
-      "setGroup": "bloodreaver",
-      "slot": "gloves",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 6,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 251,
-      "name": "Blood Cloak",
-      "level": 1,
-      "setGroup": "bloodreaver",
-      "slot": "cloak",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 2,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 252,
-      "name": "Blood Cloak",
-      "level": 2,
-      "setGroup": "bloodreaver",
-      "slot": "cloak",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 4,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 253,
-      "name": "Blood Cloak",
-      "level": 3,
-      "setGroup": "bloodreaver",
-      "slot": "cloak",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 6,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 254,
-      "name": "Blood Cloak",
-      "level": 4,
-      "setGroup": "bloodreaver",
-      "slot": "cloak",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 10,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 261,
-      "name": "Blood Ring",
-      "level": 1,
-      "setGroup": "bloodreaver",
-      "slot": "ring",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.03
-      }
-    },
-    {
-      "id": 262,
-      "name": "Blood Ring",
-      "level": 2,
-      "setGroup": "bloodreaver",
-      "slot": "ring",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.05
-      }
-    },
-    {
-      "id": 263,
-      "name": "Blood Ring",
-      "level": 3,
-      "setGroup": "bloodreaver",
-      "slot": "ring",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.08
-      }
-    },
-    {
-      "id": 264,
-      "name": "Blood Ring",
-      "level": 4,
-      "setGroup": "bloodreaver",
-      "slot": "ring",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.12
-      }
-    },
-    {
-      "id": 271,
-      "name": "Blood Pendant",
-      "level": 1,
-      "setGroup": "bloodreaver",
-      "slot": "necklace",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 1,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 272,
-      "name": "Blood Pendant",
-      "level": 2,
-      "setGroup": "bloodreaver",
-      "slot": "necklace",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 2,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 273,
-      "name": "Blood Pendant",
-      "level": 3,
-      "setGroup": "bloodreaver",
-      "slot": "necklace",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 4,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 274,
-      "name": "Blood Pendant",
-      "level": 4,
-      "setGroup": "bloodreaver",
-      "slot": "necklace",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 6,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 281,
-      "name": "Blood Belt",
-      "level": 1,
-      "setGroup": "bloodreaver",
-      "slot": "belt",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 2,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 282,
-      "name": "Blood Belt",
-      "level": 2,
-      "setGroup": "bloodreaver",
-      "slot": "belt",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 4,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 283,
-      "name": "Blood Belt",
-      "level": 3,
-      "setGroup": "bloodreaver",
-      "slot": "belt",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 6,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 284,
-      "name": "Blood Belt",
-      "level": 4,
-      "setGroup": "bloodreaver",
-      "slot": "belt",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 10,
-        "armor": 0,
-        "damage": 0,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 291,
-      "name": "Blood Axe",
-      "level": 1,
-      "setGroup": "bloodreaver",
-      "slot": "hand",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 4,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 292,
-      "name": "Blood Axe",
-      "level": 2,
-      "setGroup": "bloodreaver",
-      "slot": "hand",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 6,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 293,
-      "name": "Blood Axe",
-      "level": 3,
-      "setGroup": "bloodreaver",
-      "slot": "hand",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 9,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 294,
-      "name": "Blood Axe",
-      "level": 4,
-      "setGroup": "bloodreaver",
-      "slot": "hand",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 14,
-        "speed": 0.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 301,
-      "name": "Blood Dagger",
-      "level": 1,
-      "setGroup": "bloodreaver",
-      "slot": "hand",
-      "rarity": "common",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 2,
-        "speed": 1.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 302,
-      "name": "Blood Dagger",
-      "level": 2,
-      "setGroup": "bloodreaver",
-      "slot": "hand",
-      "rarity": "uncommon",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 4,
-        "speed": 2.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 303,
-      "name": "Blood Dagger",
-      "level": 3,
-      "setGroup": "bloodreaver",
-      "slot": "hand",
-      "rarity": "rare",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 6,
-        "speed": 3.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    },
-    {
-      "id": 304,
-      "name": "Blood Dagger",
-      "level": 4,
-      "setGroup": "bloodreaver",
-      "slot": "hand",
-      "rarity": "epic",
-      "icon": null,
-      "stats": {
-        "hp": 0,
-        "armor": 0,
-        "damage": 10,
-        "speed": 5.0,
-        "thorns": 0,
-        "lifesteal": 0.0
-      }
-    }
-  ]
+    "version":  2,
+    "slots":  [
+                  {
+                      "color":  "#94a3b8",
+                      "name":  "Hat",
+                      "id":  "hat"
+                  },
+                  {
+                      "color":  "#64748b",
+                      "name":  "Body",
+                      "id":  "body"
+                  },
+                  {
+                      "color":  "#78716c",
+                      "name":  "Shoes",
+                      "id":  "shoes"
+                  },
+                  {
+                      "color":  "#a8a29e",
+                      "name":  "Gloves",
+                      "id":  "gloves"
+                  },
+                  {
+                      "color":  "#818cf8",
+                      "name":  "Cloak",
+                      "id":  "cloak"
+                  },
+                  {
+                      "color":  "#fbbf24",
+                      "name":  "Ring",
+                      "id":  "ring"
+                  },
+                  {
+                      "color":  "#c084fc",
+                      "name":  "Necklace",
+                      "id":  "necklace"
+                  },
+                  {
+                      "color":  "#f59e0b",
+                      "name":  "Hand",
+                      "id":  "hand"
+                  },
+                  {
+                      "color":  "#84cc16",
+                      "name":  "Belt",
+                      "id":  "belt"
+                  }
+              ],
+    "game":  "Three Remain",
+    "sets":  [
+                 {
+                     "color":  "#60a5fa",
+                     "name":  "Sentinel",
+                     "id":  "sentinel"
+                 },
+                 {
+                     "color":  "#84cc16",
+                     "name":  "Thornlord",
+                     "id":  "thornlord"
+                 },
+                 {
+                     "color":  "#f43f5e",
+                     "name":  "Bloodreaver",
+                     "id":  "bloodreaver"
+                 }
+             ],
+    "heroes":  [
+                   {
+                       "icon":  null,
+                       "name":  "Knight",
+                       "id":  1,
+                       "baseStat":  {
+                                        "physDmg":  100,
+                                        "lifesteal":  0,
+                                        "magDmg":  0,
+                                        "speed":  1,
+                                        "resist":  0,
+                                        "armor":  80,
+                                        "thorns":  0,
+                                        "hp":  1200
+                                    }
+                   }
+               ],
+    "setBonuses":  {
+                       "bloodreaver":  [
+
+                                       ],
+                       "sentinel":  [
+                                        {
+                                            "pieces":  2,
+                                            "text":  "+2 Armor"
+                                        },
+                                        {
+                                            "pieces":  4,
+                                            "text":  "+5 HP"
+                                        },
+                                        {
+                                            "pieces":  6,
+                                            "text":  "Mỗi 5s nhận Barrier = 10% Max HP (tối đa 4)"
+                                        }
+                                    ],
+                       "thornlord":  [
+                                         {
+                                             "pieces":  2,
+                                             "text":  "Thorns +2"
+                                         },
+                                         {
+                                             "pieces":  4,
+                                             "text":  "Thorns hiệu quả +50%"
+                                         },
+                                         {
+                                             "pieces":  6,
+                                             "text":  "Thorns có thể Crit"
+                                         }
+                                     ]
+                   },
+    "exportedAt":  "2026-06-23T06:23:41.2747730Z",
+    "items":  [
+                  {
+                      "id":  1,
+                      "name":  "Sentinel Helm",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  2
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  3
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  5
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  1,
+                                                           "thorns":  0,
+                                                           "hp":  7
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  {
+
+                                   },
+                      "slot":  "hat",
+                      "setGroup":  "sentinel"
+                  },
+                  {
+                      "id":  2,
+                      "name":  "Sentinel Armor",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  1,
+                                                           "thorns":  0,
+                                                           "hp":  3
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  1,
+                                                           "thorns":  0,
+                                                           "hp":  5
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  2,
+                                                           "thorns":  0,
+                                                           "hp":  7
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  3,
+                                                           "thorns":  0,
+                                                           "hp":  10
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  {
+
+                                   },
+                      "slot":  "body",
+                      "setGroup":  "sentinel"
+                  },
+                  {
+                      "id":  3,
+                      "name":  "Sentinel Boots",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  2
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  3
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  5
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  1,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  7
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  {
+
+                                   },
+                      "slot":  "shoes",
+                      "setGroup":  "sentinel"
+                  },
+                  {
+                      "id":  4,
+                      "name":  "Sentinel Gauntlets",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  1,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  2,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  3,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  5,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  {
+
+                                   },
+                      "slot":  "gloves",
+                      "setGroup":  "sentinel"
+                  },
+                  {
+                      "id":  5,
+                      "name":  "Sentinel Cloak",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  1,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  2
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  1,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  3
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  2,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  5
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  3,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  7
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  {
+
+                                   },
+                      "slot":  "cloak",
+                      "setGroup":  "sentinel"
+                  },
+                  {
+                      "id":  6,
+                      "name":  "Sentinel Ring",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  2
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  3
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  5
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  7
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  [
+                                       {
+                                           "minLevel":  3,
+                                           "text":  "Barrier +1"
+                                       },
+                                       {
+                                           "minLevel":  4,
+                                           "text":  "Barrier +2"
+                                       }
+                                   ],
+                      "slot":  "ring",
+                      "setGroup":  "sentinel"
+                  },
+                  {
+                      "id":  7,
+                      "name":  "Sentinel Pendant",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  1,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  2
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  2,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  3
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  3,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  5
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  5,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  7
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  {
+
+                                   },
+                      "slot":  "necklace",
+                      "setGroup":  "sentinel"
+                  },
+                  {
+                      "id":  8,
+                      "name":  "Sentinel Belt",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  2
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  3
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  1,
+                                                           "thorns":  0,
+                                                           "hp":  5
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  2,
+                                                           "thorns":  0,
+                                                           "hp":  7
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  {
+
+                                   },
+                      "slot":  "belt",
+                      "setGroup":  "sentinel"
+                  },
+                  {
+                      "id":  9,
+                      "name":  "Sentinel Greatsword",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  2,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  3,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  5,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  7,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  [
+                                       {
+                                           "minLevel":  1,
+                                           "text":  "Hit â†’ +1 Armor (3s)"
+                                       },
+                                       {
+                                           "minLevel":  4,
+                                           "text":  "Hit â†’ +1 Armor (6s)"
+                                       }
+                                   ],
+                      "slot":  "hand",
+                      "setGroup":  "sentinel"
+                  },
+                  {
+                      "id":  10,
+                      "name":  "Sentinel Shield",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  1,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  2,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  3,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  5,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  [
+                                       {
+                                           "minLevel":  1,
+                                           "text":  "6s nhận Barrier 1"
+                                       },
+                                       {
+                                           "minLevel":  2,
+                                           "text":  "5s nhận Barrier 2"
+                                       },
+                                       {
+                                           "minLevel":  3,
+                                           "text":  "5s nhận Barrier 3"
+                                       },
+                                       {
+                                           "minLevel":  4,
+                                           "text":  "4s nhận Barrier 4"
+                                       }
+                                   ],
+                      "slot":  "hand",
+                      "setGroup":  "sentinel"
+                  },
+                  {
+                      "id":  11,
+                      "name":  "Thorn Crown",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  2
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  3
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  5
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  7
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  {
+
+                                   },
+                      "slot":  "hat",
+                      "setGroup":  "thornlord"
+                  },
+                  {
+                      "id":  12,
+                      "name":  "Thorn Mail",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  1,
+                                                           "thorns":  0,
+                                                           "hp":  2
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  2,
+                                                           "thorns":  0,
+                                                           "hp":  3
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  3,
+                                                           "thorns":  0,
+                                                           "hp":  5
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  5,
+                                                           "thorns":  0,
+                                                           "hp":  7
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  {
+
+                                   },
+                      "slot":  "body",
+                      "setGroup":  "thornlord"
+                  },
+                  {
+                      "id":  13,
+                      "name":  "Thorn Walkers",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  2
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  3
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  5
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  7
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  {
+
+                                   },
+                      "slot":  "shoes",
+                      "setGroup":  "thornlord"
+                  },
+                  {
+                      "id":  14,
+                      "name":  "Thorn Claws",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  1,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  2,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  3,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  5,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  {
+
+                                   },
+                      "slot":  "gloves",
+                      "setGroup":  "thornlord"
+                  },
+                  {
+                      "id":  15,
+                      "name":  "Thorn Mantle",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  1,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  2
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  2,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  3
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  3,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  5
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  5,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  7
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  {
+
+                                   },
+                      "slot":  "cloak",
+                      "setGroup":  "thornlord"
+                  },
+                  {
+                      "id":  16,
+                      "name":  "Thorn Ring",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  1,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  2,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  3,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  5,
+                                                           "hp":  0
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  {
+
+                                   },
+                      "slot":  "ring",
+                      "setGroup":  "thornlord"
+                  },
+                  {
+                      "id":  17,
+                      "name":  "Thorn Necklace",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  2
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  3
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  5
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  7
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  [
+                                       {
+                                           "minLevel":  3,
+                                           "text":  "Thorns +50%"
+                                       },
+                                       {
+                                           "minLevel":  4,
+                                           "text":  "Thorns +100%"
+                                       }
+                                   ],
+                      "slot":  "necklace",
+                      "setGroup":  "thornlord"
+                  },
+                  {
+                      "id":  18,
+                      "name":  "Thorn Belt",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  2
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  3
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  5
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  7
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  {
+
+                                   },
+                      "slot":  "belt",
+                      "setGroup":  "thornlord"
+                  },
+                  {
+                      "id":  19,
+                      "name":  "Thorn Hammer",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  2,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  3,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  5,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  7,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  [
+                                       {
+                                           "minLevel":  1,
+                                           "text":  "Thorns +1"
+                                       },
+                                       {
+                                           "minLevel":  2,
+                                           "text":  "Thorns +2"
+                                       },
+                                       {
+                                           "minLevel":  3,
+                                           "text":  "Thorns +3"
+                                       },
+                                       {
+                                           "minLevel":  4,
+                                           "text":  "Thorns +5"
+                                       }
+                                   ],
+                      "slot":  "hand",
+                      "setGroup":  "thornlord"
+                  },
+                  {
+                      "id":  20,
+                      "name":  "Thorn Shield",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  1,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  2,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  3,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  5,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  [
+                                       {
+                                           "minLevel":  1,
+                                           "text":  "Reflect 1"
+                                       },
+                                       {
+                                           "minLevel":  2,
+                                           "text":  "Reflect 2"
+                                       },
+                                       {
+                                           "minLevel":  3,
+                                           "text":  "Reflect 3"
+                                       },
+                                       {
+                                           "minLevel":  4,
+                                           "text":  "Reflect 5"
+                                       }
+                                   ],
+                      "slot":  "hand",
+                      "setGroup":  "thornlord"
+                  },
+                  {
+                      "id":  21,
+                      "name":  "Blood Hood",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  2
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  3
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  5
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  7
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  {
+
+                                   },
+                      "slot":  "hat",
+                      "setGroup":  "bloodreaver"
+                  },
+                  {
+                      "id":  22,
+                      "name":  "Blood Armor",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  3
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  5
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  1,
+                                                           "thorns":  0,
+                                                           "hp":  7
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  2,
+                                                           "thorns":  0,
+                                                           "hp":  10
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  {
+
+                                   },
+                      "slot":  "body",
+                      "setGroup":  "bloodreaver"
+                  },
+                  {
+                      "id":  23,
+                      "name":  "Blood Boots",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  1,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  2,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  3,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  5,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  {
+
+                                   },
+                      "slot":  "shoes",
+                      "setGroup":  "bloodreaver"
+                  },
+                  {
+                      "id":  24,
+                      "name":  "Blood Gloves",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  1,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  2,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  3,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  5,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  {
+
+                                   },
+                      "slot":  "gloves",
+                      "setGroup":  "bloodreaver"
+                  },
+                  {
+                      "id":  25,
+                      "name":  "Blood Cloak",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  1,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  2
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  2,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  3
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  3,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  5
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  5,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  7
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  {
+
+                                   },
+                      "slot":  "cloak",
+                      "setGroup":  "bloodreaver"
+                  },
+                  {
+                      "id":  26,
+                      "name":  "Blood Ring",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0.02,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0.04,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0.06,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0.1,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  {
+
+                                   },
+                      "slot":  "ring",
+                      "setGroup":  "bloodreaver"
+                  },
+                  {
+                      "id":  27,
+                      "name":  "Blood Pendant",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  1,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  2,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  3,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  5,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  {
+
+                                   },
+                      "slot":  "necklace",
+                      "setGroup":  "bloodreaver"
+                  },
+                  {
+                      "id":  28,
+                      "name":  "Blood Belt",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  2
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  3
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  5
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  0,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  7
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  [
+                                       {
+                                           "minLevel":  3,
+                                           "text":  "Healing Received +10%"
+                                       },
+                                       {
+                                           "minLevel":  4,
+                                           "text":  "Healing Received +20%"
+                                       }
+                                   ],
+                      "slot":  "belt",
+                      "setGroup":  "bloodreaver"
+                  },
+                  {
+                      "id":  29,
+                      "name":  "Blood Axe",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  3,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  5,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  7,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  10,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  0,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  [
+                                       {
+                                           "minLevel":  1,
+                                           "text":  "Lifesteal 2%"
+                                       },
+                                       {
+                                           "minLevel":  2,
+                                           "text":  "Lifesteal 4%"
+                                       },
+                                       {
+                                           "minLevel":  3,
+                                           "text":  "Lifesteal 6%"
+                                       },
+                                       {
+                                           "minLevel":  4,
+                                           "text":  "Lifesteal 10%"
+                                       }
+                                   ],
+                      "slot":  "hand",
+                      "setGroup":  "bloodreaver"
+                  },
+                  {
+                      "id":  30,
+                      "name":  "Blood Dagger",
+                      "levelStats":  [
+                                         {
+                                             "level":  1,
+                                             "stats":  {
+                                                           "physDmg":  2,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  1,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  2,
+                                             "stats":  {
+                                                           "physDmg":  3,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  2,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  3,
+                                             "stats":  {
+                                                           "physDmg":  5,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  3,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         },
+                                         {
+                                             "level":  4,
+                                             "stats":  {
+                                                           "physDmg":  7,
+                                                           "lifesteal":  0,
+                                                           "magDmg":  0,
+                                                           "speed":  5,
+                                                           "resist":  0,
+                                                           "armor":  0,
+                                                           "thorns":  0,
+                                                           "hp":  0
+                                                       }
+                                         }
+                                     ],
+                      "icon":  null,
+                      "passives":  {
+                                       "minLevel":  4,
+                                       "text":  "Lifesteal bằng 50% giá trị của Blood Axe cùng cấp"
+                                   },
+                      "slot":  "hand",
+                      "setGroup":  "bloodreaver"
+                  }
+              ]
 }

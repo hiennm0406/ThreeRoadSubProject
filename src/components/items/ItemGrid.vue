@@ -7,13 +7,13 @@
     <div class="grid">
       <button
         v-for="it in items"
-        :key="it.familyId ?? it.id"
+        :key="it.id"
         class="card itemCard"
-        :class="{ active: (it.familyId ?? it.id) === selectedId }"
-        @click="$emit('select', it.familyId ?? it.id)"
+        :class="{ active: it.id === selectedId }"
+        @click="$emit('select', it.id)"
         type="button"
       >
-        <div class="icon" :class="rarityClass(it.rarity)">
+        <div class="icon" :class="setClass(it.setGroup)">
           <img v-if="it.icon" :src="it.icon" alt="" loading="lazy" decoding="async" />
           <div v-else class="icon__placeholder">{{ initials(it.name) }}</div>
         </div>
@@ -21,10 +21,7 @@
         <div class="meta">
           <div class="name">{{ it.name }}</div>
           <div class="sub">
-            <span class="setDot" :style="{ background: setColor(it.setGroup) }" />
-            <span>{{ setName(it.setGroup) }}</span>
-            <span class="dot">•</span>
-            <span>Lv1–{{ it.maxLevel ?? 4 }}</span>
+            <span>{{ setLabel(it.setGroup) }}</span>
             <span class="dot">•</span>
             <span>{{ slotLabel(it.slot) }}</span>
           </div>
@@ -39,7 +36,7 @@ export default {
   props: {
     items: { type: Array, required: true },
     selectedId: { type: Number, default: null },
-    setById: { type: Object, required: true },
+    tagById: { type: Object, default: () => ({}) },
   },
   emits: ['select'],
   methods: {
@@ -49,23 +46,18 @@ export default {
       const parts = s.split(/\s+/g)
       return (parts[0]?.[0] ?? '?').toUpperCase() + (parts[1]?.[0] ?? '')
     },
-    rarityClass(rarity) {
-      const r = String(rarity ?? '').toLowerCase()
-      if (r === 'legendary') return 'legendary'
-      if (r === 'epic') return 'epic'
-      if (r === 'rare') return 'rare'
-      if (r === 'uncommon') return 'uncommon'
+    setClass(setGroup) {
+      const g = String(setGroup ?? '').toLowerCase()
+      if (g === 'sentinel') return 'sentinel'
+      if (g === 'thornlord') return 'thornlord'
+      if (g === 'bloodreaver') return 'bloodreaver'
       return 'common'
     },
-    setName(id) {
-      return this.setById?.[id]?.name ?? id ?? '—'
-    },
-    setColor(id) {
-      return this.setById?.[id]?.color ?? '#64748b'
+    setLabel(id) {
+      return this.tagById?.[id]?.name ?? id ?? '—'
     },
     slotLabel(id) {
-      if (!id) return '—'
-      return id.charAt(0).toUpperCase() + id.slice(1)
+      return this.tagById?.[id]?.name ?? id ?? '—'
     },
   },
 }
@@ -127,11 +119,18 @@ export default {
   overflow: hidden;
 }
 
-.icon.common { background: rgba(148, 163, 184, 0.08); }
-.icon.uncommon { background: rgba(52, 211, 153, 0.1); }
-.icon.rare { background: rgba(96, 165, 250, 0.12); }
-.icon.epic { background: rgba(167, 139, 250, 0.14); }
-.icon.legendary { background: rgba(251, 191, 36, 0.14); }
+.icon.sentinel {
+  background: rgba(96, 165, 250, 0.12);
+}
+.icon.thornlord {
+  background: rgba(132, 204, 22, 0.12);
+}
+.icon.bloodreaver {
+  background: rgba(244, 63, 94, 0.12);
+}
+.icon.common {
+  background: rgba(148, 163, 184, 0.08);
+}
 
 .icon img {
   width: 100%;
@@ -158,14 +157,6 @@ export default {
   display: flex;
   gap: 6px;
   align-items: center;
-  flex-wrap: wrap;
-}
-
-.setDot {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  flex-shrink: 0;
 }
 
 .dot {

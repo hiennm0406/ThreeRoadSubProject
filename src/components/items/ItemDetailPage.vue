@@ -1,18 +1,18 @@
 <template>
   <div class="itemDetailPage">
     <ItemFilters
-      :all-sets="sets"
-      :all-slots="slots"
+      :all-tags="allTags"
+      :all-heroes="allHeroes"
       :query="query"
       :match-mode="matchMode"
-      :selected-set-ids="selectedSets"
-      :selected-slot-ids="selectedSlots"
+      :selected-tag-ids="selectedTags"
+      :selected-hero-ids="selectedHeroes"
       :filtered-count="filteredItems.length"
       :total-count="items.length"
       @update:query="query = $event"
       @toggle-match-mode="toggleMatchMode"
-      @toggle-set="toggleSet"
-      @toggle-slot="toggleSlot"
+      @toggle-tag="toggleTag"
+      @toggle-hero="toggleHero"
       @clear="clearAll"
     />
 
@@ -27,8 +27,8 @@
           <span v-if="hasMore"> — cuộn xuống để tải thêm</span>
         </p>
 
-        <article v-for="it in visibleItems" :key="it.familyId ?? it.id" class="listRow card">
-          <ItemDetailPanel :item="it" :set-by-id="setById" :slot-by-id="slotById" />
+        <article v-for="it in visibleItems" :key="it.id" class="listRow card">
+          <ItemDetailPanel :item="it" :tag-by-id="tagById" :set-bonuses="setBonuses" />
         </article>
 
         <div v-if="hasMore" ref="sentinel" class="loadSentinel" aria-hidden="true">
@@ -45,7 +45,7 @@
 <script>
 import ItemFilters from './ItemFilters.vue'
 import ItemDetailPanel from './ItemDetailPanel.vue'
-import { filterGroupedItems, loadItemDatabase } from './../../data/itemDb'
+import { filterItems, loadItemDatabase } from './../../data/itemDb'
 
 const INITIAL_VISIBLE = 12
 const LOAD_BATCH = 12
@@ -53,27 +53,27 @@ const LOAD_BATCH = 12
 export default {
   components: { ItemFilters, ItemDetailPanel },
   data() {
-    const { sets, setById, slots, slotById, groupedItems } = loadItemDatabase()
+    const { tags, tagById, items, heroes, setBonuses } = loadItemDatabase()
     return {
-      sets,
-      setById,
-      slots,
-      slotById,
-      items: groupedItems,
+      allTags: tags,
+      allHeroes: heroes,
+      tagById,
+      setBonuses,
+      items,
       query: '',
       matchMode: 'any',
-      selectedSets: new Set(),
-      selectedSlots: new Set(),
+      selectedTags: new Set(),
+      selectedHeroes: new Set(),
       visibleCount: INITIAL_VISIBLE,
       loadObserver: null,
     }
   },
   computed: {
     filteredItems() {
-      return filterGroupedItems(this.items, {
+      return filterItems(this.items, {
         query: this.query,
-        selectedSets: this.selectedSets,
-        selectedSlots: this.selectedSlots,
+        selectedTags: this.selectedTags,
+        selectedHeroes: this.selectedHeroes,
         matchMode: this.matchMode,
       })
     },
@@ -113,20 +113,20 @@ export default {
     toggleMatchMode() {
       this.matchMode = this.matchMode === 'all' ? 'any' : 'all'
     },
-    toggleSet(id) {
-      if (this.selectedSets.has(id)) this.selectedSets.delete(id)
-      else this.selectedSets.add(id)
-      this.selectedSets = new Set(this.selectedSets)
+    toggleTag(id) {
+      if (this.selectedTags.has(id)) this.selectedTags.delete(id)
+      else this.selectedTags.add(id)
+      this.selectedTags = new Set(this.selectedTags)
     },
-    toggleSlot(id) {
-      if (this.selectedSlots.has(id)) this.selectedSlots.delete(id)
-      else this.selectedSlots.add(id)
-      this.selectedSlots = new Set(this.selectedSlots)
+    toggleHero(name) {
+      if (this.selectedHeroes.has(name)) this.selectedHeroes.delete(name)
+      else this.selectedHeroes.add(name)
+      this.selectedHeroes = new Set(this.selectedHeroes)
     },
     clearAll() {
       this.query = ''
-      this.selectedSets = new Set()
-      this.selectedSlots = new Set()
+      this.selectedTags = new Set()
+      this.selectedHeroes = new Set()
     },
     resetVisibleBatch() {
       this.visibleCount = INITIAL_VISIBLE

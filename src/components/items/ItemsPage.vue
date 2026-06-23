@@ -1,27 +1,27 @@
 <template>
   <div class="itemsPage">
     <ItemFilters
-      :all-sets="sets"
-      :all-slots="slots"
+      :all-tags="allTags"
+      :all-heroes="allHeroes"
       :query="query"
       :match-mode="matchMode"
-      :selected-set-ids="selectedSets"
-      :selected-slot-ids="selectedSlots"
+      :selected-tag-ids="selectedTags"
+      :selected-hero-ids="selectedHeroes"
       :filtered-count="filteredItems.length"
       :total-count="items.length"
       @update:query="query = $event"
       @toggle-match-mode="toggleMatchMode"
-      @toggle-set="toggleSet"
-      @toggle-slot="toggleSlot"
+      @toggle-tag="toggleTag"
+      @toggle-hero="toggleHero"
       @clear="clearAll"
     />
 
     <section class="grid">
-      <ItemGrid :items="filteredItems" :selected-id="selectedId" :set-by-id="setById" @select="onSelect" />
+      <ItemGrid :items="filteredItems" :selected-id="selectedId" :tag-by-id="tagById" @select="onSelect" />
     </section>
 
     <aside class="detail card">
-      <ItemDetailPanel :item="selectedItem" :set-by-id="setById" :slot-by-id="slotById" />
+      <ItemDetailPanel :item="selectedItem" :tag-by-id="tagById" :set-bonuses="setBonuses" />
     </aside>
   </div>
 </template>
@@ -30,36 +30,36 @@
 import ItemGrid from './ItemGrid.vue'
 import ItemDetailPanel from './ItemDetailPanel.vue'
 import ItemFilters from './ItemFilters.vue'
-import { filterGroupedItems, loadItemDatabase } from './../../data/itemDb'
+import { filterItems, loadItemDatabase } from './../../data/itemDb'
 
 export default {
   components: { ItemGrid, ItemDetailPanel, ItemFilters },
   data() {
-    const { sets, setById, slots, slotById, groupedItems } = loadItemDatabase()
+    const { tags, tagById, items, heroes, setBonuses } = loadItemDatabase()
     return {
-      sets,
-      setById,
-      slots,
-      slotById,
-      items: groupedItems,
+      allTags: tags,
+      allHeroes: heroes,
+      tagById,
+      setBonuses,
+      items,
       query: '',
       matchMode: 'any',
-      selectedSets: new Set(),
-      selectedSlots: new Set(),
-      selectedId: groupedItems[0]?.familyId ?? null,
+      selectedTags: new Set(),
+      selectedHeroes: new Set(),
+      selectedId: items[0]?.id ?? null,
     }
   },
   computed: {
     filteredItems() {
-      return filterGroupedItems(this.items, {
+      return filterItems(this.items, {
         query: this.query,
-        selectedSets: this.selectedSets,
-        selectedSlots: this.selectedSlots,
+        selectedTags: this.selectedTags,
+        selectedHeroes: this.selectedHeroes,
         matchMode: this.matchMode,
       })
     },
     selectedItem() {
-      return this.items.find((x) => (x.familyId ?? x.id) === this.selectedId) ?? null
+      return this.items.find((x) => x.id === this.selectedId) ?? null
     },
   },
   watch: {
@@ -68,8 +68,8 @@ export default {
         this.selectedId = null
         return
       }
-      if (!list.some((x) => (x.familyId ?? x.id) === this.selectedId)) {
-        this.selectedId = list[0].familyId ?? list[0].id
+      if (!list.some((x) => x.id === this.selectedId)) {
+        this.selectedId = list[0].id
       }
     },
   },
@@ -77,20 +77,20 @@ export default {
     toggleMatchMode() {
       this.matchMode = this.matchMode === 'all' ? 'any' : 'all'
     },
-    toggleSet(id) {
-      if (this.selectedSets.has(id)) this.selectedSets.delete(id)
-      else this.selectedSets.add(id)
-      this.selectedSets = new Set(this.selectedSets)
+    toggleTag(id) {
+      if (this.selectedTags.has(id)) this.selectedTags.delete(id)
+      else this.selectedTags.add(id)
+      this.selectedTags = new Set(this.selectedTags)
     },
-    toggleSlot(id) {
-      if (this.selectedSlots.has(id)) this.selectedSlots.delete(id)
-      else this.selectedSlots.add(id)
-      this.selectedSlots = new Set(this.selectedSlots)
+    toggleHero(name) {
+      if (this.selectedHeroes.has(name)) this.selectedHeroes.delete(name)
+      else this.selectedHeroes.add(name)
+      this.selectedHeroes = new Set(this.selectedHeroes)
     },
     clearAll() {
       this.query = ''
-      this.selectedSets = new Set()
-      this.selectedSlots = new Set()
+      this.selectedTags = new Set()
+      this.selectedHeroes = new Set()
     },
     onSelect(id) {
       this.selectedId = id

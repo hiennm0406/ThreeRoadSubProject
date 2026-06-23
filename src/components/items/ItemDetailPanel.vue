@@ -4,28 +4,62 @@
       <div class="hero card">
         <div class="hero__main">
           <div class="name">{{ item.name }}</div>
-          <div class="metaLine">{{ metaLine }}</div>
+          <div class="metaLine">ID {{ item.id }}</div>
 
           <div class="primaryBadges">
-            <span class="pill setPill" :style="{ '--set': setColor(item.setGroup) }">{{ setName(item.setGroup) }}</span>
-            <span class="pill pill--muted">{{ slotName(item.slot) }}</span>
-            <span class="pill pill--muted">{{ rarityLabel(item.rarity) }}</span>
+            <span v-if="setTag" class="pill" :style="{ '--tag': setTag.color }">{{ setTag.name }}</span>
+            <span v-if="slotTag" class="pill pill--muted">{{ slotTag.name }}</span>
+          </div>
+
+          <div class="tags">
+            <span v-for="t in item.tags ?? []" :key="t" class="tag" :style="{ '--tag': tagColor(t) }">
+              {{ tagName(t) }}
+            </span>
           </div>
         </div>
 
-        <div class="hero__image icon" :class="rarityClass(item.rarity)">
+        <div class="hero__image icon" :class="setClass(item.setGroup)">
           <img v-if="item.icon" :src="item.icon" alt="" loading="lazy" decoding="async" />
           <div v-else class="icon__placeholder">{{ initials(item.name) }}</div>
         </div>
       </div>
 
-      <div class="section">
-        <div class="section__title">Stats <span v-if="item.statsByLevel" class="section__hint">(Lv1 / Lv2 / Lv3 / Lv4)</span></div>
-        <div v-if="statEntries.length === 0" class="empty">No bonus stats.</div>
-        <div v-else class="stats">
-          <div v-for="s in statEntries" :key="s.key" class="stat">
-            <div class="stat__k">{{ s.label }}</div>
-            <div class="stat__v">{{ s.value }}</div>
+      <div v-if="(item.statTable ?? []).length > 0" class="section">
+        <div class="section__title">Stats theo level</div>
+        <div class="tableWrap">
+          <table class="levelTable">
+            <thead>
+              <tr>
+                <th>Stat</th>
+                <th v-for="lv in 4" :key="lv">Lv{{ lv }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="row in item.statTable" :key="row.key">
+                <td class="levelTable__label">{{ row.label }}</td>
+                <td v-for="(val, idx) in row.values" :key="idx" class="levelTable__val">{{ val }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div v-if="(item.passives ?? []).length > 0" class="section">
+        <div class="section__title">Passive</div>
+        <div class="passives">
+          <div v-for="(p, idx) in item.passives" :key="idx" class="passiveRow">
+            <span class="pill">≥ Lv{{ p.minLevel }}</span>
+            <span class="passiveRow__text">{{ p.text }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div v-if="setBonusLines.length > 0" class="section">
+        <div class="section__title">Set bonus — {{ setTag?.name }}</div>
+        <div class="passives">
+          <div v-for="(b, idx) in setBonusLines" :key="idx" class="passiveRow">
+            <span class="pill">{{ b.pieces }} món</span>
+            <span class="passiveRow__text">{{ b.text }}</span>
           </div>
         </div>
       </div>
@@ -36,37 +70,24 @@
 </template>
 
 <script>
-import { groupedStatEntries } from './../../data/itemDb'
+import { getSetBonuses } from './../../data/itemDb'
 
 export default {
   props: {
     item: { type: Object, default: null },
-    setById: { type: Object, required: true },
-    slotById: { type: Object, default: () => ({}) },
+    tagById: { type: Object, required: true },
+    setBonuses: { type: Object, default: () => ({}) },
   },
   computed: {
-    statEntries() {
-      if (this.item?.statsByLevel) {
-        return groupedStatEntries(this.item.statsByLevel)
-      }
-      const stats = this.item?.stats ?? {}
-      const rows = []
-      if (stats.hp) rows.push({ key: 'hp', label: 'HP', value: `+${stats.hp}` })
-      if (stats.armor) rows.push({ key: 'armor', label: 'Armor', value: `+${stats.armor}` })
-      if (stats.damage) rows.push({ key: 'damage', label: 'Damage', value: `+${stats.damage}` })
-      if (stats.speed) rows.push({ key: 'speed', label: 'Speed', value: `+${stats.speed}` })
-      if (stats.thorns) rows.push({ key: 'thorns', label: 'Thorns', value: `+${stats.thorns}` })
-      if (stats.lifesteal) rows.push({ key: 'lifesteal', label: 'Lifesteal', value: `${Math.round(stats.lifesteal * 100)}%` })
-      return rows
+    setTag() {
+      return this.tagById?.[this.item?.setGroup] ?? null
     },
-    metaLine() {
-      if (!this.item) return ''
-      if (this.item.levelIds?.length > 1) {
-        const ids = this.item.levelIds.join(' · ')
-        return `ID ${ids} · Lv1–${this.item.maxLevel ?? 4}`
-      }
-      const id = this.item.familyId ?? this.item.id
-      return this.item.level != null ? `ID ${id} · Lv${this.item.level}` : `ID ${id}`
+    slotTag() {
+      return this.tagById?.[this.item?.slot] ?? null
+    },
+    setBonusLines() {
+      if (!this.item?.setGroup) return []
+      return getSetBonuses(this.setBonuses, this.item.setGroup)
     },
   },
   methods: {
@@ -76,26 +97,18 @@ export default {
       const parts = s.split(/\s+/g)
       return (parts[0]?.[0] ?? '?').toUpperCase() + (parts[1]?.[0] ?? '')
     },
-    rarityClass(rarity) {
-      const r = String(rarity ?? '').toLowerCase()
-      if (r === 'legendary') return 'legendary'
-      if (r === 'epic') return 'epic'
-      if (r === 'rare') return 'rare'
-      if (r === 'uncommon') return 'uncommon'
+    setClass(setGroup) {
+      const g = String(setGroup ?? '').toLowerCase()
+      if (g === 'sentinel') return 'sentinel'
+      if (g === 'thornlord') return 'thornlord'
+      if (g === 'bloodreaver') return 'bloodreaver'
       return 'common'
     },
-    rarityLabel(rarity) {
-      if (!rarity) return '—'
-      return rarity.charAt(0).toUpperCase() + rarity.slice(1)
+    tagName(id) {
+      return this.tagById?.[id]?.name ?? id
     },
-    setName(id) {
-      return this.setById?.[id]?.name ?? (id === 'none' ? 'No Set' : id)
-    },
-    setColor(id) {
-      return this.setById?.[id]?.color ?? '#64748b'
-    },
-    slotName(id) {
-      return this.slotById?.[id]?.name ?? id ?? '—'
+    tagColor(id) {
+      return this.tagById?.[id]?.color ?? 'rgba(148,163,184,0.35)'
     },
   },
 }
@@ -127,11 +140,18 @@ export default {
   overflow: hidden;
 }
 
-.icon.common { background: rgba(148, 163, 184, 0.08); }
-.icon.uncommon { background: rgba(52, 211, 153, 0.1); }
-.icon.rare { background: rgba(96, 165, 250, 0.12); }
-.icon.epic { background: rgba(167, 139, 250, 0.14); }
-.icon.legendary { background: rgba(251, 191, 36, 0.14); }
+.icon.sentinel {
+  background: rgba(96, 165, 250, 0.12);
+}
+.icon.thornlord {
+  background: rgba(132, 204, 22, 0.12);
+}
+.icon.bloodreaver {
+  background: rgba(244, 63, 94, 0.12);
+}
+.icon.common {
+  background: rgba(148, 163, 184, 0.08);
+}
 
 .icon img {
   width: 100%;
@@ -169,10 +189,75 @@ export default {
   margin-bottom: 8px;
 }
 
-.section__hint {
-  font-weight: 500;
+.tags {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--tag) 50%, var(--border));
+  background: color-mix(in srgb, var(--tag) 14%, var(--panel));
+  color: var(--text);
   font-size: 12px;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.levelTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.levelTable th,
+.levelTable td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  text-align: center;
+}
+
+.levelTable th {
+  background: var(--panel-2);
+  font-weight: 700;
+}
+
+.levelTable__label {
+  text-align: left;
+  font-weight: 600;
   color: var(--muted);
+}
+
+.levelTable__val {
+  font-weight: 700;
+}
+
+.passives {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.passiveRow {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--panel-2);
+}
+
+.passiveRow__text {
+  line-height: 1.35;
 }
 
 .pill {
@@ -182,38 +267,11 @@ export default {
   border: 1px solid var(--border);
   background: var(--panel);
   color: var(--text);
-}
-
-.setPill {
-  border-color: color-mix(in srgb, var(--set) 60%, var(--border));
-  background: color-mix(in srgb, var(--set) 12%, var(--panel));
+  white-space: nowrap;
 }
 
 .pill--muted {
   color: var(--muted);
-}
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-}
-
-.stat {
-  padding: 10px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--panel-2);
-}
-
-.stat__k {
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.stat__v {
-  margin-top: 4px;
-  font-weight: 800;
 }
 
 .empty {
